@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="path">
+
+  <header class="site-header">
+    <div class="header-left">
+      <a class="header-back" id="back-link" href="warmup.html">← Warm-up</a>
+      <span class="header-sep">/</span>
+      <span class="header-person" id="person-name"></span>
+      <span class="header-sep">/</span>
+      <span class="header-path" id="path-title"></span>
+    </div>
+    <div id="lang-buttons"></div>
+  </header>
+
+  <div class="container">
+
+    <div class="path-meta">
+      <span class="path-num" style="font-size:0.8rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#2563eb;" id="path-num"></span>
+      <span class="duration-badge" id="path-duration"></span>
+    </div>
+
+    <h1 class="page-title" id="path-title-large"></h1>
+
+    <div class="leave-with-bar" id="leave-with"></div>
+
+    <div class="nodes" id="path-nodes"></div>
+
+  </div>
+
+  <script src="js/content.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Also set the path number badge once app runs
+    document.addEventListener('DOMContentLoaded', () => {
+      // path-title is already set by app.js on the header span;
+      // mirror it to the large h1 after a tick
+      setTimeout(() => {
+        const headerTitle = document.getElementById('path-title');
+        const largeTitle  = document.getElementById('path-title-large');
+        if (largeTitle && headerTitle) largeTitle.textContent = headerTitle.textContent;
+        // path number from URL
+        const pi = new URLSearchParams(window.location.search).get('path');
+        const numEl = document.getElementById('path-num');
+        if (numEl && pi !== null) numEl.textContent = `Path ${parseInt(pi, 10) + 1}`;
+      }, 0);
+    });
+  </script>
+</body>
+</html>

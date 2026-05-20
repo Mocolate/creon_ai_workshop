@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="warmup">
+
+  <header class="site-header">
+    <div class="header-left">
+      <a class="header-back" href="index.html">← All</a>
+      <span class="header-sep">/</span>
+      <span class="header-person" id="person-name"></span>
+    </div>
+    <div id="lang-buttons"></div>
+  </header>
+
+  <div class="container">
+
+    <!-- Intro -->
+    <details class="intro-card" id="intro-details">
+      <summary style="cursor:pointer; font-size:0.85rem; font-weight:600; color:#64748b; user-select:none;">
+        About this worksheet ▾
+      </summary>
+      <div id="intro-content" style="margin-top:0.75rem;"></div>
+    </details>
+
+    <!-- Warm-up -->
+    <div style="margin-bottom:0.5rem;">
+      <p class="section-label">Warm-up</p>
+      <h2 class="warmup-heading" id="warmup-title"></h2>
+      <span class="duration-badge" id="warmup-duration"></span>
+    </div>
+
+    <div class="nodes" id="warmup-nodes"></div>
+
+    <hr class="divider">
+
+    <!-- Pick a path -->
+    <p class="section-label">Pick a path</p>
+    <div class="pick-path-prose" id="pick-path-text"></div>
+
+    <div id="path-grid" class="path-grid"></div>
+
+    <!-- Notes (what we didn't do + end-of-day check) -->
+    <div class="notes-section">
+      <p class="notes-heading">Notes &amp; end-of-day check</p>
+      <div class="nodes" id="notes-content"></div>
+    </div>
+
+  </div>
+
+  <script src="js/content.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

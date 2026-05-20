@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creon AI Workshop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .index-wrap {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+    .workshop-logo {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .workshop-logo h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.25rem;
+    }
+    .workshop-logo p {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    .select-prompt {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 0.75rem;
+    }
+  </style>
+</head>
+<body data-page="index">
+
+  <div class="index-wrap">
+    <div class="workshop-logo">
+      <h1>Creon AI Workshop</h1>
+      <p>Thursday 21 May 2026 · Xelerit</p>
+    </div>
+
+    <p class="select-prompt">Select your name</p>
+    <div id="person-grid" class="person-grid"></div>
+    <!-- lang-picker injected here by app.js -->
+  </div>
+
+  <script src="js/content.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
