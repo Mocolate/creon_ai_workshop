@@ -48,7 +48,7 @@ const CONTENT = {
     },
     "paths": [
       {
-        "title": "Path 1 — Build your Quality Coaching Co-pilot",
+        "title": "Build your Quality Coaching Co-pilot",
         "duration": "~25 min",
         "leaveWith": "a Claude Project that turns the inspectors' messy notes into per-employee coaching plans in about five minutes.",
         "nodes": [
@@ -83,7 +83,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 2 — Build your HR Onboarding Pack Generator",
+        "title": "Build your HR Onboarding Pack Generator",
         "duration": "~20 min",
         "leaveWith": "a Claude Project that produces a complete onboarding document pack for a new hire from a few simple inputs about them.",
         "nodes": [
@@ -134,7 +134,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 3 — Build a Maintenance Schedule Master Document",
+        "title": "Build a Maintenance Schedule Master Document",
         "duration": "~20 min",
         "leaveWith": "a year-long maintenance schedule as a real Excel file for all buildings and equipment, plus email templates for whoever does each check.",
         "nodes": [
@@ -173,7 +173,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 4 — Bonus calculation with Code Execution",
+        "title": "Bonus calculation with Code Execution",
         "duration": "~30 min, advanced",
         "leaveWith": "a working Claude prompt that takes a monthly timesheet and applies your bonus rules — returning a per-employee bonus breakdown you can verify and use as the starting point for the monthly bonus list.",
         "nodes": [
@@ -261,7 +261,7 @@ const CONTENT = {
     },
     "paths": [
       {
-        "title": "Path 1 — Build your Creon HR Assistant",
+        "title": "Build your Creon HR Assistant",
         "duration": "~25 min",
         "leaveWith": "a Claude Project that knows your HR materials and your tone — ready for vacancies, internal announcements, policy summaries and the day-to-day HR writing you do.",
         "nodes": [
@@ -308,7 +308,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 2 — Build your HR Legal Radar",
+        "title": "Build your HR Legal Radar",
         "duration": "~25 min",
         "leaveWith": "a workflow for tracking what's changed in Dutch employment law and what it means for Creon's current materials.",
         "nodes": [
@@ -343,7 +343,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 3 — Draft a new vacancy from scratch with deep questioning",
+        "title": "Draft a new vacancy from scratch with deep questioning",
         "duration": "~20 min",
         "leaveWith": "a polished vacancy ready to publish, built by letting Claude interview you in depth before it writes a single line.",
         "nodes": [
@@ -447,7 +447,7 @@ const CONTENT = {
     },
     "paths": [
       {
-        "title": "Path 1 — Build your Customer & Order Support Project",
+        "title": "Build your Customer & Order Support Project",
         "duration": "~25 min",
         "leaveWith": "a Claude Project that handles customer emails in your team's tone with your process baked in. Whenever you need it: paste an email, get a draft, edit, send.",
         "nodes": [
@@ -482,7 +482,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 2 — Build your cross-check assistant",
+        "title": "Build your cross-check assistant",
         "duration": "~20 min",
         "leaveWith": "a standing pattern that gives you a second pair of eyes on the cross-checking you do today — comparing what's in one source against what's in another, catching the mismatches that cost time later.",
         "nodes": [
@@ -509,7 +509,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 3 — Truck delivery list: routing and scheduling",
+        "title": "Truck delivery list: routing and scheduling",
         "duration": "~25 min",
         "leaveWith": "a workflow that turns the inputs you have into a structured delivery list — ordered, routed and scheduled — ready to hand off to the drivers.",
         "nodes": [
@@ -597,7 +597,7 @@ const CONTENT = {
     },
     "paths": [
       {
-        "title": "Path 1 — Build your next Instagram posts",
+        "title": "Build your next Instagram posts",
         "duration": "~25 min",
         "leaveWith": "a Marketing Project loaded with your voice and your recent posts, that drafts new posts you'd actually want to publish.",
         "nodes": [
@@ -636,7 +636,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 2 — Co-design a 90-day social media strategy",
+        "title": "Co-design a 90-day social media strategy",
         "duration": "~30 min",
         "leaveWith": "a tailored 90-day social media strategy document for Creon — built by working *with* Claude as a thinking partner, not by asking it to generate a strategy.",
         "nodes": [
@@ -679,7 +679,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 3 — Build your customer call prep co-pilot",
+        "title": "Build your customer call prep co-pilot",
         "duration": "~25 min",
         "leaveWith": "a workflow that condenses pre-call thinking into focused prep, fast.",
         "nodes": [
@@ -738,7 +738,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 4 — Visual mockups for developers, with care",
+        "title": "Visual mockups for developers, with care",
         "duration": "extension reading, only if you're confident",
         "leaveWith": "",
         "nodes": [
@@ -810,7 +810,7 @@ const CONTENT = {
     },
     "paths": [
       {
-        "title": "Path 1 — Build your Finance Knowledge Vault",
+        "title": "Build your Finance Knowledge Vault",
         "duration": "~30 min",
         "leaveWith": "a Claude Project that holds your key agreements, policies and reference materials — and answers your questions about them.",
         "nodes": [
@@ -833,7 +833,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 2 — Transaction-matching draft",
+        "title": "Transaction-matching draft",
         "duration": "~25 min",
         "leaveWith": "a workflow that turns ugly PayPal or business-card exports into a candidate-matches table you only need to **verify**, not build from scratch.",
         "nodes": [
@@ -852,7 +852,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 3 — Consolidated sheet: consistency check and narrative",
+        "title": "Consolidated sheet: consistency check and narrative",
         "duration": "~20 min",
         "leaveWith": "a workflow for getting a second pair of eyes on the consolidated sheet you build for the group — Claude flags where things look inconsistent, and drafts the explanatory narrative around what you've already verified.",
         "nodes": [
@@ -874,7 +874,7 @@ const CONTENT = {
           },
           {
             "type": "prose",
-            "md": "#### Step 5. Iterate.\n- *\"Make it shorter.\"*\n- *\"More cautious on Entity B's cost line — we don't actually know what's driving it yet.\"*\n- *\"Add a section on open questions for the next period.\"*\n\n#### Step 6. Save the prompt template.\nNext month, you reuse this — same consistency rules, same narrative draft, new figures.\n\n#### Stretch goal\nAsk Claude to also draft the executive summary email that goes with the sheet — 4 lines, the kind a CEO actually reads.\n\n## Where to go next — Code Execution (for after the workshop)\n\nToday we deliberately stayed away from anything where Claude itself produces numbers. The reason: plain Claude is unreliable as a calculator, and finance is the area where being subtly wrong matters most.\n\n**The next step for you specifically is *Code Execution*** — a feature you can turn on in **Settings → Feature Preview**. With it, Claude writes and runs real Python to do calculations, build pivot tables, reconcile transactions, and produce verified figures. It's the same Claude, but for the maths it writes proper code instead of guessing.\n\nThis is where finance use cases open up — but it deserves a focused conversation, not a worksheet stretch goal. After you've used your Knowledge Vault for a few weeks and feel comfortable with the basics, just reach out to Mara or Pawel and we'll set up time for an informal walkthrough."
+            "md": "#### Step 5. Iterate.\n- *\"Make it shorter.\"*\n- *\"More cautious on Entity B's cost line — we don't actually know what's driving it yet.\"*\n- *\"Add a section on open questions for the next period.\"*\n\n#### Step 6. Save the prompt template.\nNext month, you reuse this — same consistency rules, same narrative draft, new figures.\n\n#### Stretch goal\nAsk Claude to also draft the executive summary email that goes with the sheet — 4 lines, the kind a CEO actually reads."
           }
         ]
       }
@@ -882,7 +882,7 @@ const CONTENT = {
     "notesNodes": [
       {
         "type": "prose",
-        "md": "## What we deliberately didn't do today\n\n- **Direct interaction with your finance and bank systems.** Claude can't currently drive those interfaces. Several would be good candidates for integration work — they go on the \"Beyond Claude alone\" board at the front of the room.\n- **Consolidation calculations.** Plain Claude shouldn't be doing these. See the Code Execution note above.\n\n## End-of-day check\n\nBefore you leave, make sure:\n- [ ] You have a working **Finance Knowledge Vault** Project (if you did Path 1).\n- [ ] You've tested it with 3+ real questions.\n- [ ] You've uploaded at least one document you didn't have during testing but realised you needed.\n- [ ] You know the next 3 documents you'll upload over the coming weeks.\n- [ ] You know to reach out to Mara or Pawel about Code Execution once you've used the Vault for a few weeks and want to push further.\n\nPawel and Mara are around all afternoon."
+        "md": "## Where to go next — Code Execution (for after the workshop)\n\nToday we deliberately stayed away from anything where Claude itself produces numbers. The reason: plain Claude is unreliable as a calculator, and finance is the area where being subtly wrong matters most.\n\n**The next step for you specifically is *Code Execution*** — a feature you can turn on in **Settings → Feature Preview**. With it, Claude writes and runs real Python to do calculations, build pivot tables, reconcile transactions, and produce verified figures. It's the same Claude, but for the maths it writes proper code instead of guessing.\n\nThis is where finance use cases open up — but it deserves a focused conversation, not a worksheet stretch goal. After you've used your Knowledge Vault for a few weeks and feel comfortable with the basics, just reach out to Mara or Pawel and we'll set up time for an informal walkthrough.\n\n## What we deliberately didn't do today\n\n- **Direct interaction with your finance and bank systems.** Claude can't currently drive those interfaces. Several would be good candidates for integration work — they go on the \"Beyond Claude alone\" board at the front of the room.\n- **Consolidation calculations.** Plain Claude shouldn't be doing these. See the Code Execution note above.\n\n## End-of-day check\n\nBefore you leave, make sure:\n- [ ] You have a working **Finance Knowledge Vault** Project (if you did Path 1).\n- [ ] You've tested it with 3+ real questions.\n- [ ] You've uploaded at least one document you didn't have during testing but realised you needed.\n- [ ] You know the next 3 documents you'll upload over the coming weeks.\n- [ ] You know to reach out to Mara or Pawel about Code Execution once you've used the Vault for a few weeks and want to push further.\n\nPawel and Mara are around all afternoon."
       }
     ]
   },
@@ -924,7 +924,7 @@ const CONTENT = {
     },
     "paths": [
       {
-        "title": "Path 1 — Build your Inbox Routing Assistant",
+        "title": "Build your Inbox Routing Assistant",
         "duration": "~30 min",
         "leaveWith": "a Claude Project that takes incoming emails and tells you who to route each one to — factoring in your team roster, expertise areas, and current availability.",
         "nodes": [
@@ -979,7 +979,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 2 — End-of-day inbox synthesis",
+        "title": "End-of-day inbox synthesis",
         "duration": "~25 min",
         "leaveWith": "a workflow that turns a day's inbox into an end-of-day briefing — what happened, what mattered, what needs follow-up tomorrow.",
         "nodes": [
@@ -1006,7 +1006,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 3 — Complaint pattern intelligence",
+        "title": "Complaint pattern intelligence",
         "duration": "~25 min",
         "leaveWith": "the ability to ask questions across weeks or months of complaints — what's our top complaint type this month, is something trending up, is the new product getting more issues than the old one.",
         "nodes": [
@@ -1098,7 +1098,7 @@ const CONTENT = {
     },
     "paths": [
       {
-        "title": "Path 1 — Build your CEO-to-Dev Translator",
+        "title": "Build your CEO-to-Dev Translator",
         "duration": "~30 min",
         "leaveWith": "a Claude Project that turns your half-formed ideas into developer-ready specs with acceptance criteria and edge cases — faster than writing the same brief yourself.",
         "nodes": [
@@ -1169,7 +1169,7 @@ const CONTENT = {
         ]
       },
       {
-        "title": "Path 2 — Triage in motion",
+        "title": "Triage in motion",
         "duration": "~25 min",
         "leaveWith": "a reusable pattern for the constant-interrupt rhythm of your day — emails, decisions, things that need to leave your head before they leave you.",
         "nodes": [

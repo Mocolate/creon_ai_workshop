@@ -115,24 +115,26 @@ function setupLangButtons(personId, currentLang, langs) {
 
 // ── Prompt block ──────────────────────────────────────────────────────────────
 
-function makePromptBlock(enText, altText, altLabel) {
+function makePromptBlock(enText, altText, altLabel, currentLang) {
   const hasAlt = !!(altText && altLabel);
   const wrap = document.createElement('div');
   wrap.className = 'prompt-block';
 
   if (hasAlt) {
+    // Initial active tab follows the current UI language
+    const initTab = (currentLang && currentLang !== 'en') ? 'alt' : 'en';
     const tabsHtml = `
       <div class="prompt-tabs">
-        <button class="ptab active" data-tab="en">EN</button>
-        <button class="ptab" data-tab="alt">${esc(altLabel.toUpperCase())}</button>
+        <button class="ptab${initTab === 'en' ? ' active' : ''}" data-tab="en">EN</button>
+        <button class="ptab${initTab === 'alt' ? ' active' : ''}" data-tab="alt">${esc(altLabel.toUpperCase())}</button>
       </div>`;
     wrap.innerHTML = tabsHtml + `
       <div class="prompt-content">
-        <pre class="prompt-pre"><code class="ptext ptext-en">${esc(enText)}</code><code class="ptext ptext-alt" hidden>${esc(altText)}</code></pre>
+        <pre class="prompt-pre"><code class="ptext ptext-en"${initTab !== 'en' ? ' hidden' : ''}>${esc(enText)}</code><code class="ptext ptext-alt"${initTab !== 'alt' ? ' hidden' : ''}>${esc(altText)}</code></pre>
         <button class="copy-btn">Copy</button>
       </div>`;
 
-    let activeTab = 'en';
+    let activeTab = initTab;
     wrap.querySelectorAll('.ptab').forEach(btn => {
       btn.addEventListener('click', () => {
         activeTab = btn.dataset.tab;
@@ -178,22 +180,26 @@ function copy(text, btn) {
 
 // ── Node renderer ─────────────────────────────────────────────────────────────
 
-function renderNodes(nodes, sectionTrans, lang, container) {
-  const altLang = lang !== 'en' ? lang : null;
+function renderNodes(nodes, sectionTrans, lang, personAltLang, container) {
+  // Prose shows translated text only when UI lang matches the translation lang.
+  // Prompts always show both tabs when a translation exists (independent axis).
+  const uiIsAlt = lang !== 'en';
 
   nodes.forEach((node, i) => {
     const transVal = sectionTrans?.nodes?.[i] ?? null;
 
     if (node.type === 'prose') {
-      const mdText = (transVal && altLang) ? transVal : node.md;
+      const mdText = (transVal && uiIsAlt) ? transVal : node.md;
       const div = document.createElement('div');
       div.className = 'prose';
       div.innerHTML = renderMd(mdText);
       container.appendChild(div);
 
     } else if (node.type === 'prompt') {
-      const altText = (altLang && transVal) ? transVal : null;
-      container.appendChild(makePromptBlock(node.text, altText, altLang));
+      // Show alt tab whenever translation exists, regardless of UI lang
+      const altText  = transVal || null;
+      const altLabel = altText ? personAltLang : null;
+      container.appendChild(makePromptBlock(node.text, altText, altLabel, lang));
     }
   });
 }
@@ -245,8 +251,9 @@ function initWarmup() {
   const person = CONTENT[personId];
   if (!person) { document.body.innerHTML = '<p style="padding:2rem">Person not found.</p>'; return; }
 
-  const trans = (lang !== 'en') ? (TRANSLATIONS[personId] || null) : null;
-  const altLang = lang !== 'en' ? lang : null;
+  // Always load translations — prompts show both tabs regardless of UI lang
+  const trans   = TRANSLATIONS[personId] || null;
+  const useAlt  = lang !== 'en';  // whether prose should show translated text
 
   document.title = `${person.displayName} — Workshop`;
   document.getElementById('person-name').textContent = person.displayName;
@@ -255,33 +262,33 @@ function initWarmup() {
   // Intro
   const introEl = document.getElementById('intro-content');
   if (introEl) {
-    const introMd = (trans?.intro && altLang) ? trans.intro : person.introMd;
+    const introMd = (useAlt && trans?.intro) ? trans.intro : person.introMd;
     introEl.innerHTML = renderMd(introMd);
   }
 
   // Warmup title + duration
   const warmupTrans = trans?.warmup ?? null;
-  const warmupTitle = (warmupTrans?.title && altLang) ? warmupTrans.title : person.warmup.title;
+  const warmupTitle = (useAlt && warmupTrans?.title) ? warmupTrans.title : person.warmup.title;
   document.getElementById('warmup-title').textContent = warmupTitle;
   const durEl = document.getElementById('warmup-duration');
   if (durEl) durEl.textContent = person.warmup.duration;
 
   // Warmup nodes
-  renderNodes(person.warmup.nodes, warmupTrans, lang, document.getElementById('warmup-nodes'));
+  renderNodes(person.warmup.nodes, warmupTrans, lang, person.altLang, document.getElementById('warmup-nodes'));
 
   // Pick-a-path prose
   const pickEl = document.getElementById('pick-path-text');
   if (pickEl && person.warmup.pickPath) {
-    const pickMd = (warmupTrans?.pickPath && altLang) ? warmupTrans.pickPath : person.warmup.pickPath;
+    const pickMd = (useAlt && warmupTrans?.pickPath) ? warmupTrans.pickPath : person.warmup.pickPath;
     pickEl.innerHTML = renderMd(pickMd);
   }
 
   // Path cards
   const pathGrid = document.getElementById('path-grid');
   person.paths.forEach((path, pi) => {
-    const pt = trans?.paths?.[pi] ?? null;
-    const title     = (pt?.title     && altLang) ? pt.title     : path.title;
-    const leaveWith = (pt?.leaveWith && altLang) ? pt.leaveWith : path.leaveWith;
+    const pt        = trans?.paths?.[pi] ?? null;
+    const title     = (useAlt && pt?.title)     ? pt.title     : path.title;
+    const leaveWith = (useAlt && pt?.leaveWith) ? pt.leaveWith : path.leaveWith;
 
     const card = document.createElement('a');
     card.className = 'path-card';
@@ -299,7 +306,7 @@ function initWarmup() {
   // Notes
   const notesEl = document.getElementById('notes-content');
   if (notesEl && person.notesNodes?.length) {
-    renderNodes(person.notesNodes, null, lang, notesEl);
+    renderNodes(person.notesNodes, null, lang, person.altLang, notesEl);
   } else if (notesEl) {
     notesEl.closest('.notes-section')?.remove();
   }
@@ -314,13 +321,13 @@ function initPath() {
     document.body.innerHTML = '<p style="padding:2rem">Path not found.</p>'; return;
   }
 
-  const path = person.paths[pathIndex];
-  const trans = (lang !== 'en') ? (TRANSLATIONS[personId] || null) : null;
-  const pt = trans?.paths?.[pathIndex] ?? null;
-  const altLang = lang !== 'en' ? lang : null;
+  const path    = person.paths[pathIndex];
+  const trans   = TRANSLATIONS[personId] || null;
+  const pt      = trans?.paths?.[pathIndex] ?? null;
+  const useAlt  = lang !== 'en';
 
-  const title     = (pt?.title     && altLang) ? pt.title     : path.title;
-  const leaveWith = (pt?.leaveWith && altLang) ? pt.leaveWith : path.leaveWith;
+  const title     = (useAlt && pt?.title)     ? pt.title     : path.title;
+  const leaveWith = (useAlt && pt?.leaveWith) ? pt.leaveWith : path.leaveWith;
 
   document.title = `${person.displayName} — ${title}`;
   document.getElementById('person-name').textContent = person.displayName;
@@ -339,7 +346,7 @@ function initPath() {
     else lwEl.remove();
   }
 
-  renderNodes(path.nodes, pt, lang, document.getElementById('path-nodes'));
+  renderNodes(path.nodes, pt, lang, person.altLang, document.getElementById('path-nodes'));
 }
 
 // ── Boot ──────────────────────────────────────────────────────────────────────

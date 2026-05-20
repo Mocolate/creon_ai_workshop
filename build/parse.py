@@ -1,49 +1,51 @@
 #!/usr/bin/env python3
-"""Parse workshop markdown files into js/content.js and js/translations.js"""
+"""
+Parse workshop markdown files into js/content.js and js/translations.js.
+Handles English originals in worksheets/ and translations in worksheet_translations/.
+Run: python3 build/parse.py
+"""
 
-import re, json, os, textwrap
+import re, json, os
 
-WORKSHEETS_DIR = os.path.join(os.path.dirname(__file__), '..', 'worksheets')
-JS_DIR = os.path.join(os.path.dirname(__file__), '..', 'js')
+WORKSHEETS_DIR     = os.path.join(os.path.dirname(__file__), '..', 'worksheets')
+TRANSLATIONS_DIR   = os.path.join(os.path.dirname(__file__), '..', 'worksheet_translations')
+JS_DIR             = os.path.join(os.path.dirname(__file__), '..', 'js')
 
 PEOPLE = [
-    dict(file='01_aga.md',      id='aga',      displayName='Aga',      altLang='pl'),
-    dict(file='02_sandra.md',   id='sandra',   displayName='Sandra',   altLang='nl'),
-    dict(file='03_sofia.md',    id='sofia',    displayName='Sofia',    altLang='nl'),
-    dict(file='04_amber.md',    id='amber',    displayName='Amber',    altLang='nl'),
-    dict(file='05_lisette.md',  id='lisette',  displayName='Lisette',  altLang='nl'),
-    dict(file='06_bart.md',     id='bart',     displayName='Bart',     altLang='nl'),
-    dict(file='09_geoffrey.md', id='geoffrey', displayName='Geoffrey', altLang='nl'),
+    dict(file='01_aga.md',      trans='01_aga_pl.md',      id='aga',      displayName='Aga',      altLang='pl'),
+    dict(file='02_sandra.md',   trans='02_sandra_nl.md',   id='sandra',   displayName='Sandra',   altLang='nl'),
+    dict(file='03_sofia.md',    trans='03_sofia_nl.md',    id='sofia',    displayName='Sofia',    altLang='nl'),
+    dict(file='04_amber.md',    trans='04_amber_nl.md',    id='amber',    displayName='Amber',    altLang='nl'),
+    dict(file='05_lisette.md',  trans='05_lisette_nl.md',  id='lisette',  displayName='Lisette',  altLang='nl'),
+    dict(file='06_bart.md',     trans='06_bart_nl.md',     id='bart',     displayName='Bart',     altLang='nl'),
+    dict(file='09_geoffrey.md', trans='09_geoffrey_nl.md', id='geoffrey', displayName='Geoffrey', altLang='nl'),
 ]
+
+# "You'll leave with" in all three languages
+LEAVE_WITH_RE = re.compile(
+    r"\*\*(You'll leave with|Je vertrekt met|Wyjdziesz z):\*\*\s*(.+)"
+)
+LEAVE_WITH_STRIP_RE = re.compile(
+    r"\*\*(You'll leave with|Je vertrekt met|Wyjdziesz z):\*\*[^\n]*\n?"
+)
 
 
 # ── Prompt extraction ────────────────────────────────────────────────────────
 
 def extract_prompts(bq_text):
-    """
-    Find all *"..."* spans in blockquote text (may span multiple paragraphs).
-    Returns list of cleaned prompt strings including the outer quote characters.
-    """
     prompts = []
-    # Non-greedy match from *" to "* — handles both single-line and multi-para
     for m in re.finditer(r'\*("[\s\S]+?")\*', bq_text):
         raw = m.group(1)
-        # Strip italic asterisks from each line, keep inner content
         lines = raw.split('\n')
-        cleaned_lines = []
-        for line in lines:
-            line = re.sub(r'^\*+', '', line)
-            line = re.sub(r'\*+$', '', line)
-            cleaned_lines.append(line.strip())
+        cleaned_lines = [re.sub(r'^\*+|\*+$', '', l).strip() for l in lines]
         text = '\n'.join(cleaned_lines)
         text = re.sub(r'\n{3,}', '\n\n', text).strip()
         if text:
             prompts.append(text)
     if not prompts:
-        # Fallback
-        lines = bq_text.split('\n')
         cleaned = '\n'.join(
-            re.sub(r'^\*+|\*+$', '', l).strip() for l in lines if l.strip()
+            re.sub(r'^\*+|\*+$', '', l).strip()
+            for l in bq_text.split('\n') if l.strip()
         )
         if cleaned:
             prompts.append(cleaned)
@@ -53,10 +55,7 @@ def extract_prompts(bq_text):
 # ── Node parser ──────────────────────────────────────────────────────────────
 
 def parse_nodes(text):
-    """Split text into alternating prose and prompt nodes."""
-    # Strip structural --- lines
     lines = [l for l in text.split('\n') if l.strip() != '---']
-
     nodes = []
     prose_lines = []
     bq_lines = []
@@ -97,9 +96,16 @@ def parse_nodes(text):
     return nodes
 
 
-# ── Section finder ───────────────────────────────────────────────────────────
+# ── Section finder (language-agnostic) ──────────────────────────────────────
 
 def find_sections(lines):
+    """
+    Detects sections by structure, not by language-specific text.
+    Warmup:    first ## heading containing ' — '
+    Pick path: first ## heading after warmup, before any paths, without ' — '
+    Paths:     ### headings that contain a digit
+    Notes:     first ## heading that comes after the last path start
+    """
     intro_end = -1
     warmup_start = -1
     pick_path_start = -1
@@ -108,17 +114,27 @@ def find_sections(lines):
 
     for i, line in enumerate(lines):
         t = line.strip()
+
+        # Intro end: first '---' before warmup is found
         if t == '---' and intro_end == -1 and warmup_start == -1:
             intro_end = i
-        if re.match(r'^## Warm-up', t):
+
+        # Warmup: first ## heading with ' — ' in it
+        if re.match(r'^## .+ — .+', t) and warmup_start == -1:
             warmup_start = i
-        if re.match(r'^## Pick a path', t):
+
+        # Pick-path: first ## heading (without ' — ') after warmup and before any paths
+        if (warmup_start != -1 and i > warmup_start and not path_starts
+                and notes_start == -1 and re.match(r'^## ', t)
+                and ' — ' not in t):
             pick_path_start = i
-        if re.match(r'^### Path \d+', t):
+
+        # Paths: ### headings containing a digit
+        if re.match(r'^### ', t) and re.search(r'\d', t):
             path_starts.append(i)
-        if re.match(r'^## What we deliberately', t):
-            notes_start = i
-        if re.match(r'^## End-of-day check', t) and notes_start == -1:
+
+        # Notes: first ## heading after the last path start
+        if path_starts and i > path_starts[-1] and re.match(r'^## ', t) and notes_start == -1:
             notes_start = i
 
     return dict(
@@ -132,23 +148,23 @@ def find_sections(lines):
 
 # ── Worksheet parser ─────────────────────────────────────────────────────────
 
-def parse_worksheet(person):
-    filepath = os.path.join(WORKSHEETS_DIR, person['file'])
+def parse_file(filepath):
+    """Parse a single worksheet file into structured data."""
     raw = open(filepath, encoding='utf-8').read()
     lines = raw.split('\n')
     s = find_sections(lines)
 
-    # Intro (skip # Worksheet — Name line)
+    # Intro (skip first line = # Worksheet — Name)
     intro_md = '\n'.join(lines[1:s['intro_end']]).strip()
 
     # Warmup
     warmup_end = (s['pick_path_start'] if s['pick_path_start'] != -1
                   else (s['path_starts'][0] if s['path_starts'] else len(lines)))
     wl = lines[s['warmup_start']:warmup_end]
-    wh = re.match(r'^## Warm-up — (.+?) \*\((.+?)\)\*', wl[0].strip())
-    warmup_title = wh.group(1).strip() if wh else 'Warm-up'
+    wh = re.match(r'^## [^—]+— (.+?) \*\((.+?)\)\*', wl[0].strip())
+    warmup_title    = wh.group(1).strip() if wh else wl[0].strip()
     warmup_duration = wh.group(2).strip() if wh else ''
-    warmup_nodes = parse_nodes('\n'.join(wl[1:]))
+    warmup_nodes    = parse_nodes('\n'.join(wl[1:]))
 
     # Pick-a-path prose
     pick_path = ''
@@ -169,77 +185,108 @@ def parse_worksheet(person):
             end = len(lines)
 
         pl = lines[start:end]
-        hm = re.match(r'^### (.+?) \*\((.+?)\)\*', pl[0].strip())
-        title = hm.group(1).strip() if hm else re.sub(r'^### ', '', pl[0]).strip()
+        # Header: ### Word N — Title *(duration)*
+        hm = re.match(r'^### .+?\d+\s*—\s*(.+?) \*\((.+?)\)\*', pl[0].strip())
+        title    = hm.group(1).strip() if hm else re.sub(r'^### ', '', pl[0]).strip()
         duration = hm.group(2).strip() if hm else ''
         body = '\n'.join(pl[1:])
-        lwm = re.search(r"\*\*You'll leave with:\*\*\s*(.+)", body)
-        leave_with = lwm.group(1).strip() if lwm else ''
-        # Remove the "You'll leave with:" line from nodes to avoid duplication
-        body_for_nodes = re.sub(r"\*\*You'll leave with:\*\*[^\n]*\n?", '', body)
-        paths.append(dict(title=title, duration=duration, leaveWith=leave_with,
-                          nodes=parse_nodes(body_for_nodes)))
+
+        lw_match  = LEAVE_WITH_RE.search(body)
+        leave_with = lw_match.group(2).strip() if lw_match else ''
+        body_for_nodes = LEAVE_WITH_STRIP_RE.sub('', body)
+
+        paths.append(dict(
+            title=title, duration=duration, leaveWith=leave_with,
+            nodes=parse_nodes(body_for_nodes)
+        ))
 
     # Notes
     notes_nodes = []
     if s['notes_start'] != -1:
         notes_nodes = parse_nodes('\n'.join(lines[s['notes_start']:]))
 
-    return dict(
-        id=person['id'],
-        displayName=person['displayName'],
-        altLang=person['altLang'],
-        langs=['en', person['altLang']],
-        introMd=intro_md,
-        warmup=dict(title=warmup_title, duration=warmup_duration,
-                    pickPath=pick_path, nodes=warmup_nodes),
-        paths=paths,
-        notesNodes=notes_nodes,
-    )
+    return dict(introMd=intro_md,
+                warmup=dict(title=warmup_title, duration=warmup_duration,
+                            pickPath=pick_path, nodes=warmup_nodes),
+                paths=paths, notesNodes=notes_nodes)
 
 
-# ── Translation stub builder ─────────────────────────────────────────────────
+# ── Translation mapper ────────────────────────────────────────────────────────
 
-def build_translation_block(person):
-    al = person['altLang'].upper()
-    lines = [f"  // ── {person['displayName']} ({al}) ──────────────────────────────"]
-    lines.append(f"  {person['id']}: {{")
-    preview = json.dumps(person['introMd'][:60])
-    lines.append(f"    intro: null, // EN: {preview}…")
-    lines.append(f"    warmup: {{")
-    lines.append(f"      title: null, // EN: {json.dumps(person['warmup']['title'])}")
-    lines.append(f"      pickPath: null,")
-    lines.append(f"      nodes: [")
-    for i, n in enumerate(person['warmup']['nodes']):
-        src = n['md'] if n['type'] == 'prose' else n['text']
-        prev = src[:70].replace('\n', ' ')
-        lines.append(f"        null, // [{i}] {n['type']}: {prev}…")
-    lines.append(f"      ],")
-    lines.append(f"    }},")
-    lines.append(f"    paths: [")
-    for pi, p in enumerate(person['paths']):
-        lines.append(f"      {{ // Path {pi+1}: {p['title']}")
-        lines.append(f"        title: null,")
-        lines.append(f"        leaveWith: null,")
-        lines.append(f"        nodes: [")
-        for i, n in enumerate(p['nodes']):
-            src = n['md'] if n['type'] == 'prose' else n['text']
-            prev = src[:70].replace('\n', ' ')
-            lines.append(f"          null, // [{i}] {n['type']}: {prev}…")
-        lines.append(f"        ],")
-        lines.append(f"      }},")
-    lines.append(f"    ],")
-    lines.append(f"  }},")
-    return '\n'.join(lines)
+def map_translations(en_data, trans_data, person_id):
+    """
+    Map translated content to the same node indices as the English original.
+    For each section, we align translated nodes with English nodes by index.
+    Node values are: translated markdown (prose) or translated prompt text.
+    Mismatches are reported and padded with null.
+    """
+    def extract_node_values(nodes):
+        return [n['md'] if n['type'] == 'prose' else n['text'] for n in nodes]
+
+    def align(en_nodes, tr_nodes, label):
+        en_vals = extract_node_values(en_nodes)
+        tr_vals = extract_node_values(tr_nodes)
+        if len(en_vals) != len(tr_vals):
+            print(f"  ⚠ {person_id}/{label}: EN={len(en_vals)} nodes, translation={len(tr_vals)} nodes — padding with null")
+        result = []
+        for i, _ in enumerate(en_vals):
+            result.append(tr_vals[i] if i < len(tr_vals) else None)
+        return result
+
+    result = {
+        'intro': trans_data['introMd'],
+        'warmup': {
+            'title':    trans_data['warmup']['title'],
+            'pickPath': trans_data['warmup']['pickPath'],
+            'nodes':    align(en_data['warmup']['nodes'],
+                              trans_data['warmup']['nodes'],
+                              'warmup'),
+        },
+        'paths': [],
+    }
+
+    for pi, (en_path, tr_path) in enumerate(zip(en_data['paths'], trans_data['paths'])):
+        result['paths'].append({
+            'title':     tr_path['title'],
+            'leaveWith': tr_path['leaveWith'],
+            'nodes':     align(en_path['nodes'], tr_path['nodes'], f'path{pi+1}'),
+        })
+
+    if len(en_data['paths']) != len(trans_data['paths']):
+        print(f"  ⚠ {person_id}: EN={len(en_data['paths'])} paths, translation={len(trans_data['paths'])} paths")
+
+    return result
 
 
-# ── Main ─────────────────────────────────────────────────────────────────────
+# ── Run ───────────────────────────────────────────────────────────────────────
 
 os.makedirs(JS_DIR, exist_ok=True)
-all_people = [parse_worksheet(p) for p in PEOPLE]
+
+all_people_en   = []  # full person objects for content.js
+all_translations = {}  # id -> translated content for translations.js
+
+for p in PEOPLE:
+    en_path    = os.path.join(WORKSHEETS_DIR,   p['file'])
+    trans_path = os.path.join(TRANSLATIONS_DIR, p['trans'])
+
+    en_data = parse_file(en_path)
+
+    person = dict(
+        id=p['id'], displayName=p['displayName'],
+        altLang=p['altLang'], langs=['en', p['altLang']],
+        **en_data
+    )
+    all_people_en.append(person)
+
+    if os.path.exists(trans_path):
+        trans_data = parse_file(trans_path)
+        all_translations[p['id']] = map_translations(en_data, trans_data, p['id'])
+    else:
+        print(f"  ⚠ No translation file found: {p['trans']}")
+        all_translations[p['id']] = None
 
 # content.js
-content_map = {p['id']: p for p in all_people}
+content_map = {p['id']: p for p in all_people_en}
 content_js = (
     "// Auto-generated by build/parse.py — do not hand-edit.\n"
     "// Re-run: python3 build/parse.py\n\n"
@@ -250,26 +297,20 @@ with open(os.path.join(JS_DIR, 'content.js'), 'w', encoding='utf-8') as f:
 print('✓ js/content.js')
 
 # translations.js
-trans_blocks = '\n'.join(build_translation_block(p) for p in all_people)
-translations_js = f"""// Workshop translations — fill in null values with translated strings.
-// For prose nodes: provide translated Markdown text.
-// For prompt nodes: provide translated prompt text (shown in copyable code blocks).
-// Any null falls back to English.
-//
-// nodes[] arrays must stay the same length as in content.js.
-// Aga (pl): Polish. All others (nl): Dutch.
-
-const TRANSLATIONS = {{
-{trans_blocks}
-}};
-"""
+trans_js = (
+    "// Auto-generated by build/parse.py from worksheet_translations/\n"
+    "// Re-run: python3 build/parse.py\n\n"
+    f"const TRANSLATIONS = {json.dumps(all_translations, indent=2, ensure_ascii=False)};\n"
+)
 with open(os.path.join(JS_DIR, 'translations.js'), 'w', encoding='utf-8') as f:
-    f.write(translations_js)
+    f.write(trans_js)
 print('✓ js/translations.js')
 
 # Summary
-for p in all_people:
-    total = len(p['warmup']['nodes']) + sum(len(pa['nodes']) for pa in p['paths'])
+for p in all_people_en:
+    total   = len(p['warmup']['nodes']) + sum(len(pa['nodes']) for pa in p['paths'])
     prompts = (sum(1 for n in p['warmup']['nodes'] if n['type'] == 'prompt') +
                sum(sum(1 for n in pa['nodes'] if n['type'] == 'prompt') for pa in p['paths']))
-    print(f"  {p['id']}: {len(p['paths'])} paths, {total} nodes ({prompts} prompts to translate)")
+    t = all_translations.get(p['id'])
+    status = '✓' if t else '✗'
+    print(f"  {status} {p['id']}: {len(p['paths'])} paths, {total} nodes ({prompts} prompts)")
