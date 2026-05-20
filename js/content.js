@@ -22,7 +22,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"Read all of these quality inspection remarks. Group them by employee. For each employee, list the issues that came up.\""
+          "text": "Read all of these quality inspection remarks. Group them by employee. For each employee, list the issues that came up."
         },
         {
           "type": "prose",
@@ -30,7 +30,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"Now zoom out. Across all of these remarks, what patterns do you see? What types of issues are most common? Are there any issues that keep coming back?\""
+          "text": "Now zoom out. Across all of these remarks, what patterns do you see? What types of issues are most common? Are there any issues that keep coming back?"
         },
         {
           "type": "prose",
@@ -38,7 +38,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"If you were me, what would you do first based on this?\""
+          "text": "If you were me, what would you do first based on this?"
         },
         {
           "type": "prose",
@@ -58,7 +58,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You help me synthesize quality inspection remarks into constructive coaching plans for employees on the production floor.\n\nWhen I paste a batch of remarks, do the following:\n1. Group them by employee.\n2. For each employee, identify the patterns and the type of issue.\n3. Suggest a focus area for improvement.\n4. Draft a short coaching note I can use as a starting point for a one-on-one conversation. Tactful, specific, and constructive — never accusatory.\n5. Always offer concrete, actionable improvement steps — not vague advice.\n\nUse the uploaded examples to match my tone. When in doubt, ask me before guessing.\""
+            "text": "You help me synthesize quality inspection remarks into constructive coaching plans for employees on the production floor.\n\nWhen I paste a batch of remarks, do the following:\n1. Group them by employee.\n2. For each employee, identify the patterns and the type of issue.\n3. Suggest a focus area for improvement.\n4. Draft a short coaching note I can use as a starting point for a one-on-one conversation. Tactful, specific, and constructive — never accusatory.\n5. Always offer concrete, actionable improvement steps — not vague advice.\n\nUse the uploaded examples to match my tone. When in doubt, ask me before guessing."
           },
           {
             "type": "prose",
@@ -66,15 +66,15 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"For employee X, the tone is a bit too formal. Soften it.\""
+            "text": "For employee X, the tone is a bit too formal. Soften it."
           },
           {
             "type": "prompt",
-            "text": "\"Add a section at the end with a one-line action for me as the manager.\""
+            "text": "Add a section at the end with a one-line action for me as the manager."
           },
           {
             "type": "prompt",
-            "text": "\"The improvement steps for Y are too generic. Make them specific to the issue you described.\""
+            "text": "The improvement steps for Y are too generic. Make them specific to the issue you described."
           },
           {
             "type": "prose",
@@ -93,7 +93,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You help me prepare onboarding documents for new hires.\n\nWhen I give you the details of a new hire — name, role, start date, department, salary band — generate the complete onboarding pack using the templates I've uploaded.\n\nFill in everything that can be filled in from the inputs. For anything that needs my input, mark it clearly with [REVIEW: …].\n\nDefault language: Polish. Switch to Dutch or English only when I explicitly ask.\n\nAlways produce all documents, even if some need review. I'll review the whole pack before sending anything to the new hire.\""
+            "text": "You help me prepare onboarding documents for new hires.\n\nWhen I give you the details of a new hire — name, role, start date, department, salary band — generate the complete onboarding pack using the templates I've uploaded.\n\nFill in everything that can be filled in from the inputs. For anything that needs my input, mark it clearly with [REVIEW: …].\n\nDefault language: Polish. Switch to Dutch or English only when I explicitly ask.\n\nAlways produce all documents, even if some need review. I'll review the whole pack before sending anything to the new hire."
           },
           {
             "type": "prose",
@@ -101,7 +101,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"New hire: Anna Nowak, Role: machine operator, Start date: 1 December 2026, Department: Production line A. Generate the full onboarding pack.\""
+            "text": "New hire: Anna Nowak, Role: machine operator, Start date: 1 December 2026, Department: Production line A. Generate the full onboarding pack."
           },
           {
             "type": "prose",
@@ -109,7 +109,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"For the welcome letter, follow my template more closely — the second paragraph in my template should always be about the buddy system.\""
+            "text": "For the welcome letter, follow my template more closely — the second paragraph in my template should always be about the buddy system."
           },
           {
             "type": "prose",
@@ -117,7 +117,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now draft the email I'd send to the new hire's manager letting them know the pack is ready, and a separate one to IT with the equipment request.\""
+            "text": "Now draft the email I'd send to the new hire's manager letting them know the pack is ready, and a separate one to IT with the equipment request."
           },
           {
             "type": "prose",
@@ -125,7 +125,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Here's a job description for a [role]. And here's a CV I've received. Assess the fit on a scale of 1-5 and explain. Be honest about what's missing from the CV — don't assume capabilities that aren't stated. List the top 3 questions I should ask in a phone screen to find out what the CV doesn't tell me.\""
+            "text": "Here's a job description for a [role]. And here's a CV I've received. Assess the fit on a scale of 1-5 and explain. Be honest about what's missing from the CV — don't assume capabilities that aren't stated. List the top 3 questions I should ask in a phone screen to find out what the CV doesn't tell me."
           },
           {
             "type": "prose",
@@ -144,7 +144,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Here is our inventory of buildings and equipment that need regular maintenance checks:\n- Building A: fire extinguishers (annual), emergency lights (quarterly), HVAC filters (every 3 months)…\n- Building B: ...\n- Forklift 1: inspection every 6 months, certification annually…\n…etc.\""
+            "text": "Here is our inventory of buildings and equipment that need regular maintenance checks:\n- Building A: fire extinguishers (annual), emergency lights (quarterly), HVAC filters (every 3 months)…\n- Building B: ...\n- Forklift 1: inspection every 6 months, certification annually…\n…etc."
           },
           {
             "type": "prose",
@@ -152,7 +152,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Generate a year-long maintenance schedule as an Excel file. Columns: Date, Location, Equipment, Check type, Responsible party (leave empty for me to fill in), Status (start as 'Planned'), Notes.\n\nSpread the work out across the year — don't bunch all the annual checks into January. Color-code the rows by urgency or category if possible.\""
+            "text": "Generate a year-long maintenance schedule as an Excel file. Columns: Date, Location, Equipment, Check type, Responsible party (leave empty for me to fill in), Status (start as 'Planned'), Notes.\n\nSpread the work out across the year — don't bunch all the annual checks into January. Color-code the rows by urgency or category if possible."
           },
           {
             "type": "prose",
@@ -160,7 +160,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now draft three email templates I can send to whoever is responsible for each kind of check. One for routine quarterly inspections, one for annual safety certifications, and one for follow-up if a check is overdue. Polish if possible.\""
+            "text": "Now draft three email templates I can send to whoever is responsible for each kind of check. One for routine quarterly inspections, one for annual safety certifications, and one for follow-up if a check is overdue. Polish if possible."
           },
           {
             "type": "prose",
@@ -168,7 +168,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Looking at this schedule, where are the busiest weeks? Where would I add extra capacity if I could?\""
+            "text": "Looking at this schedule, where are the busiest weeks? Where would I add extra capacity if I could?"
           }
         ]
       },
@@ -183,7 +183,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"I've uploaded the bonus rules and three example employee timesheets. Before you write any code, ask me up to 8 questions to make sure you understand the rules correctly. Pay special attention to edge cases — what counts as a late arrival, how holidays are treated, what 'WZ' or 'W' in the timesheet means.\""
+            "text": "I've uploaded the bonus rules and three example employee timesheets. Before you write any code, ask me up to 8 questions to make sure you understand the rules correctly. Pay special attention to edge cases — what counts as a late arrival, how holidays are treated, what 'WZ' or 'W' in the timesheet means."
           },
           {
             "type": "prose",
@@ -191,7 +191,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now write Python code that reads the three timesheets, applies the bonus rules, and outputs a table with: Employee, Attendance bonus, Teamwork bonus, Overtime bonus, Total. Run the code and show me the result.\""
+            "text": "Now write Python code that reads the three timesheets, applies the bonus rules, and outputs a table with: Employee, Attendance bonus, Teamwork bonus, Overtime bonus, Total. Run the code and show me the result."
           },
           {
             "type": "prose",
@@ -199,7 +199,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"For employee Y you computed [X], but the real answer is [Y]. Walk me through your logic. What rule were you applying?\""
+            "text": "For employee Y you computed [X], but the real answer is [Y]. Walk me through your logic. What rule were you applying?"
           },
           {
             "type": "prose",
@@ -207,7 +207,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now imagine I upload 70 timesheets at once, all in the same folder format. Can you adapt the code to process all of them in one run, and produce a single bonus table sorted by total descending?\""
+            "text": "Now imagine I upload 70 timesheets at once, all in the same folder format. Can you adapt the code to process all of them in one run, and produce a single bonus table sorted by total descending?"
           },
           {
             "type": "prose",
@@ -243,7 +243,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"This is a recent vacancy we used at Creon. I want to refresh it for a new role — same level but different position. Before you rewrite anything, ask me up to 7 questions about what's different for the new role.\""
+          "text": "This is a recent vacancy we used at Creon. I want to refresh it for a new role — same level but different position. Before you rewrite anything, ask me up to 7 questions about what's different for the new role."
         },
         {
           "type": "prose",
@@ -251,7 +251,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"Good. Now produce the refreshed vacancy.\""
+          "text": "Good. Now produce the refreshed vacancy."
         },
         {
           "type": "prose",
@@ -271,7 +271,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You help me with HR work for Creon. You hold our templates, policies and tone-of-voice examples in this Project.\n\nDefaults:\n- Reply in Dutch unless I write to you in another language.\n- Use the tone of voice in the uploaded example announcements.\n- For vacancies, follow our vacancy template structure.\n- For policy questions, ground your answer in the uploaded handbook and quote the relevant section.\n\nWhen a topic touches on Dutch employment law (retirement, sick leave, parental leave, termination), always flag it as something I should verify with a legal advisor before acting. Never give a confident legal opinion.\n\nBefore drafting longer documents, ask me up to 5 questions if anything important is unclear.\""
+            "text": "You help me with HR work for Creon. You hold our templates, policies and tone-of-voice examples in this Project.\n\nDefaults:\n- Reply in Dutch unless I write to you in another language.\n- Use the tone of voice in the uploaded example announcements.\n- For vacancies, follow our vacancy template structure.\n- For policy questions, ground your answer in the uploaded handbook and quote the relevant section.\n\nWhen a topic touches on Dutch employment law (retirement, sick leave, parental leave, termination), always flag it as something I should verify with a legal advisor before acting. Never give a confident legal opinion.\n\nBefore drafting longer documents, ask me up to 5 questions if anything important is unclear."
           },
           {
             "type": "prose",
@@ -279,7 +279,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Draft a short internal announcement explaining we're moving the team meeting from Monday morning to Tuesday afternoon, effective from next month.\""
+            "text": "Draft a short internal announcement explaining we're moving the team meeting from Monday morning to Tuesday afternoon, effective from next month."
           },
           {
             "type": "prose",
@@ -287,7 +287,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"I need to send a friendly reminder to managers about logging holiday requests before the end of the year. Draft something.\""
+            "text": "I need to send a friendly reminder to managers about logging holiday requests before the end of the year. Draft something."
           },
           {
             "type": "prose",
@@ -295,11 +295,11 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"This sounds too formal — match the example in [filename].\""
+            "text": "This sounds too formal — match the example in [filename]."
           },
           {
             "type": "prompt",
-            "text": "\"Always end internal announcements with a single warm closing line, not a corporate sign-off.\""
+            "text": "Always end internal announcements with a single warm closing line, not a corporate sign-off."
           },
           {
             "type": "prose",
@@ -318,7 +318,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Search for changes in Dutch employment law over the last 6 months that affect [retirement / sick leave / parental leave / fixed-term contracts — pick one].\n\nSummarise as a table with these columns: Change, Effective date, Source (with link), What this means in practice for me as an employer.\""
+            "text": "Search for changes in Dutch employment law over the last 6 months that affect [retirement / sick leave / parental leave / fixed-term contracts — pick one].\n\nSummarise as a table with these columns: Change, Effective date, Source (with link), What this means in practice for me as an employer."
           },
           {
             "type": "prose",
@@ -326,7 +326,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now, given these changes, review my current [vacancy template / sick-leave policy / whatever you uploaded]. Quote the specific section, then suggest what should be updated. If a section is fine as-is, say so.\""
+            "text": "Now, given these changes, review my current [vacancy template / sick-leave policy / whatever you uploaded]. Quote the specific section, then suggest what should be updated. If a section is fine as-is, say so."
           },
           {
             "type": "prose",
@@ -334,7 +334,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Combine the change summary and the policy review into one document with clear sections. Add a 'date this was checked' line at the top so I know how fresh this is.\""
+            "text": "Combine the change summary and the policy review into one document with clear sections. Add a 'date this was checked' line at the top so I know how fresh this is."
           },
           {
             "type": "prose",
@@ -353,7 +353,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"I need to write a vacancy for a new role at Creon. Before you write anything, interview me. Ask me up to 12 questions covering: the role and its responsibilities, the team it joins, must-have skills vs nice-to-haves, salary band, culture fit, growth path, and anything else you think I should clarify before you write.\""
+            "text": "I need to write a vacancy for a new role at Creon. Before you write anything, interview me. Ask me up to 12 questions covering: the role and its responsibilities, the team it joins, must-have skills vs nice-to-haves, salary band, culture fit, growth path, and anything else you think I should clarify before you write."
           },
           {
             "type": "prose",
@@ -361,7 +361,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now produce the vacancy.\""
+            "text": "Now produce the vacancy."
           },
           {
             "type": "prose",
@@ -369,15 +369,15 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now give me a shorter version — half the length.\""
+            "text": "Now give me a shorter version — half the length."
           },
           {
             "type": "prompt",
-            "text": "\"Now make it more enthusiastic without sounding salesy.\""
+            "text": "Now make it more enthusiastic without sounding salesy."
           },
           {
             "type": "prompt",
-            "text": "\"Now produce an English version for international candidates.\""
+            "text": "Now produce an English version for international candidates."
           },
           {
             "type": "prose",
@@ -385,7 +385,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Suggest 3 places this role would be best advertised, and one short LinkedIn post I could share to my own network promoting it.\""
+            "text": "Suggest 3 places this role would be best advertised, and one short LinkedIn post I could share to my own network promoting it."
           }
         ]
       }
@@ -417,7 +417,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"These are customer emails I received recently. For each one, classify it on three dimensions:\n1. Type (delivery question / change request / payment question / complaint / other)\n2. Urgency (urgent / today / this week / no rush)\n3. What I need to do (reply / forward / FYI only)\n\nGive me the results as a table.\""
+          "text": "These are customer emails I received recently. For each one, classify it on three dimensions:\n1. Type (delivery question / change request / payment question / complaint / other)\n2. Urgency (urgent / today / this week / no rush)\n3. What I need to do (reply / forward / FYI only)\n\nGive me the results as a table."
         },
         {
           "type": "prose",
@@ -425,7 +425,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"Now draft a reply for each one, in Dutch. Keep them concise and friendly.\""
+          "text": "Now draft a reply for each one, in Dutch. Keep them concise and friendly."
         },
         {
           "type": "prose",
@@ -433,11 +433,11 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"For the delivery questions, make the replies shorter — one short paragraph each.\""
+          "text": "For the delivery questions, make the replies shorter — one short paragraph each."
         },
         {
           "type": "prompt",
-          "text": "\"For the complaints, warm them up a bit. Always offer a concrete next step.\""
+          "text": "For the complaints, warm them up a bit. Always offer a concrete next step."
         },
         {
           "type": "prose",
@@ -457,7 +457,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You help me handle customer emails about orders, deliveries and installations for Creon.\n\nDefaults:\n- Reply in Dutch unless the customer wrote in another language.\n- When a template fits, use it as the starting point and personalise it to the customer and situation. State which template you used at the top of the draft. Don't send templates word-for-word.\n- Use the friendly, professional tone of the example replies I've uploaded.\n- For complaints, always offer a concrete next step — never just an apology.\n\nThread awareness: if I paste a thread where I've already contacted this customer about the same issue, vary the phrasing — don't send the same wording twice. For repeated issues (e.g. a delivery delayed a second time), escalate the tone and offer something more substantial than the first response.\n\nWhen I paste a customer email together with order details I've checked, compare the two and flag any mismatch before drafting.\n\nAlways remind me at the bottom of your draft if there's something I should double-check before sending.\""
+            "text": "You help me handle customer emails about orders, deliveries and installations for Creon.\n\nDefaults:\n- Reply in Dutch unless the customer wrote in another language.\n- When a template fits, use it as the starting point and personalise it to the customer and situation. State which template you used at the top of the draft. Don't send templates word-for-word.\n- Use the friendly, professional tone of the example replies I've uploaded.\n- For complaints, always offer a concrete next step — never just an apology.\n\nThread awareness: if I paste a thread where I've already contacted this customer about the same issue, vary the phrasing — don't send the same wording twice. For repeated issues (e.g. a delivery delayed a second time), escalate the tone and offer something more substantial than the first response.\n\nWhen I paste a customer email together with order details I've checked, compare the two and flag any mismatch before drafting.\n\nAlways remind me at the bottom of your draft if there's something I should double-check before sending."
           },
           {
             "type": "prose",
@@ -465,15 +465,15 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"This is too formal. Match the warmth of my example in [filename].\""
+            "text": "This is too formal. Match the warmth of my example in [filename]."
           },
           {
             "type": "prompt",
-            "text": "\"Don't use 'Geachte heer/mevrouw' — we always use the customer's first name.\""
+            "text": "Don't use 'Geachte heer/mevrouw' — we always use the customer's first name."
           },
           {
             "type": "prompt",
-            "text": "\"Keep replies under 4 lines unless there's a real reason to go longer.\""
+            "text": "Keep replies under 4 lines unless there's a real reason to go longer."
           },
           {
             "type": "prose",
@@ -492,7 +492,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Part of my daily work at Creon admin is cross-checking information across different sources before processing an order. I want to set up a workflow where you help me spot mismatches.\n\nBefore we start: ask me up to 6 questions to understand what I actually cross-check — which sources, what kinds of mismatches matter, what 'clean' looks like, and what kinds of mistakes are most costly when they slip through.\""
+            "text": "Part of my daily work at Creon admin is cross-checking information across different sources before processing an order. I want to set up a workflow where you help me spot mismatches.\n\nBefore we start: ask me up to 6 questions to understand what I actually cross-check — which sources, what kinds of mismatches matter, what 'clean' looks like, and what kinds of mistakes are most costly when they slip through."
           },
           {
             "type": "prose",
@@ -500,7 +500,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now build me a reusable prompt I can use whenever I'm about to process an order. It should take the information from the different sources I just described, list any mismatches clearly, suggest a resolution for each, and rate confidence (high / medium / low). If everything matches, say so clearly so I know it's truly clean.\""
+            "text": "Now build me a reusable prompt I can use whenever I'm about to process an order. It should take the information from the different sources I just described, list any mismatches clearly, suggest a resolution for each, and rate confidence (high / medium / low). If everything matches, say so clearly so I know it's truly clean."
           },
           {
             "type": "prose",
@@ -519,7 +519,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"I need to produce a weekly truck delivery list. Today the process is manual — I read these inputs, decide which orders go on which truck on which day, sort them by route, and build the final list.\n\nHelp me automate the assembling, routing and scheduling part.\n\nHere's what the final list should contain: [list the columns — e.g. order number, customer name, delivery address, scheduled date, route order, special remarks].\n\nFor routing and scheduling: group deliveries logically by region and by day. If two deliveries are close together geographically, they should be on the same truck. Ask me about any rules I have for which days certain regions get served, or constraints I need you to respect.\""
+            "text": "I need to produce a weekly truck delivery list. Today the process is manual — I read these inputs, decide which orders go on which truck on which day, sort them by route, and build the final list.\n\nHelp me automate the assembling, routing and scheduling part.\n\nHere's what the final list should contain: [list the columns — e.g. order number, customer name, delivery address, scheduled date, route order, special remarks].\n\nFor routing and scheduling: group deliveries logically by region and by day. If two deliveries are close together geographically, they should be on the same truck. Ask me about any rules I have for which days certain regions get served, or constraints I need you to respect."
           },
           {
             "type": "prose",
@@ -527,15 +527,15 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Add a column for X.\""
+            "text": "Add a column for X."
           },
           {
             "type": "prompt",
-            "text": "\"Sort by route order within each day, not by order number.\""
+            "text": "Sort by route order within each day, not by order number."
           },
           {
             "type": "prompt",
-            "text": "\"Group rows visually by region — empty row between regions.\""
+            "text": "Group rows visually by region — empty row between regions."
           },
           {
             "type": "prose",
@@ -571,7 +571,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"These are pieces of marketing copy I've written for Creon that I'm happy with.\n\nRead them and describe my brand voice as a clear set of rules. Be specific. I'm looking for things like:\n- Tone and energy.\n- Typical sentence length and structure.\n- Words I tend to use vs words I avoid.\n- How I handle CTAs (call-to-action).\n- What I do consistently across all of them.\n\nOutput it as a clean reference document I can save.\""
+          "text": "These are pieces of marketing copy I've written for Creon that I'm happy with.\n\nRead them and describe my brand voice as a clear set of rules. Be specific. I'm looking for things like:\n- Tone and energy.\n- Typical sentence length and structure.\n- Words I tend to use vs words I avoid.\n- How I handle CTAs (call-to-action).\n- What I do consistently across all of them.\n\nOutput it as a clean reference document I can save."
         },
         {
           "type": "prose",
@@ -579,7 +579,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"You said I use exclamation marks often — actually I almost never use them. Re-examine the examples and correct.\""
+          "text": "You said I use exclamation marks often — actually I almost never use them. Re-examine the examples and correct."
         },
         {
           "type": "prose",
@@ -587,7 +587,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"Ask me questions about any gaps or uncertainties in this brand voice description — anything you had to guess at. Keep asking until you have a clear picture.\""
+          "text": "Ask me questions about any gaps or uncertainties in this brand voice description — anything you had to guess at. Keep asking until you have a clear picture."
         },
         {
           "type": "prose",
@@ -607,7 +607,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You help me draft Instagram content for Creon. You hold my brand voice rules, my recent posts and our product positioning in this Project.\n\nWhen I ask for a post, always offer 3 caption variations: short / medium / long.\n\nAlways include:\n- A clear hook in the first line.\n- A one-line content brief for the visual to go with the caption.\n- 3 to 5 hashtag suggestions, all on-brand.\n\nStay human. No AI-sounding phrasing. No corporate jargon. Match the voice rules in the uploaded document.\n\nI'll always edit before posting. Treat your output as a first draft, not a final version.\n\nIf you're not sure what direction I'm going for (campaign theme, product, season), ask me before writing.\""
+            "text": "You help me draft Instagram content for Creon. You hold my brand voice rules, my recent posts and our product positioning in this Project.\n\nWhen I ask for a post, always offer 3 caption variations: short / medium / long.\n\nAlways include:\n- A clear hook in the first line.\n- A one-line content brief for the visual to go with the caption.\n- 3 to 5 hashtag suggestions, all on-brand.\n\nStay human. No AI-sounding phrasing. No corporate jargon. Match the voice rules in the uploaded document.\n\nI'll always edit before posting. Treat your output as a first draft, not a final version.\n\nIf you're not sure what direction I'm going for (campaign theme, product, season), ask me before writing."
           },
           {
             "type": "prose",
@@ -615,7 +615,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"I need a post announcing our new colour range for ALU windows. Soft launch — we want to build curiosity without saying everything yet.\""
+            "text": "I need a post announcing our new colour range for ALU windows. Soft launch — we want to build curiosity without saying everything yet."
           },
           {
             "type": "prose",
@@ -623,11 +623,11 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"The first line sounds generic. Look at my last 5 posts — none of them start like that. Try again.\""
+            "text": "The first line sounds generic. Look at my last 5 posts — none of them start like that. Try again."
           },
           {
             "type": "prompt",
-            "text": "\"Drop the word 'innovative' — I never use it.\""
+            "text": "Drop the word 'innovative' — I never use it."
           },
           {
             "type": "prose",
@@ -646,7 +646,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Before drafting any strategy, interview me. Ask me up to 10 questions covering anything you need to know to write a strategy that's specific to Creon, not generic to 'a window company'. Don't write the strategy yet.\""
+            "text": "Before drafting any strategy, interview me. Ask me up to 10 questions covering anything you need to know to write a strategy that's specific to Creon, not generic to 'a window company'. Don't write the strategy yet."
           },
           {
             "type": "prose",
@@ -654,7 +654,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now produce a 90-day social media strategy as a structured document. Cover: monthly themes, posting cadence per channel, content pillars, influencer angles, success metrics. Make it specific to Creon — not a template a competitor could use.\""
+            "text": "Now produce a 90-day social media strategy as a structured document. Cover: monthly themes, posting cadence per channel, content pillars, influencer angles, success metrics. Make it specific to Creon — not a template a competitor could use."
           },
           {
             "type": "prose",
@@ -662,15 +662,15 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"'Engage your community' isn't a strategy. What specifically should I be doing on Tuesday mornings?\""
+            "text": "'Engage your community' isn't a strategy. What specifically should I be doing on Tuesday mornings?"
           },
           {
             "type": "prompt",
-            "text": "\"This pillar — 'product education' — looks like every other manufacturer. Where's the angle that's actually us?\""
+            "text": "This pillar — 'product education' — looks like every other manufacturer. Where's the angle that's actually us?"
           },
           {
             "type": "prompt",
-            "text": "\"I don't have time for this much volume. Cut it in half and tell me which posts matter most.\""
+            "text": "I don't have time for this much volume. Cut it in half and tell me which posts matter most."
           },
           {
             "type": "prose",
@@ -689,7 +689,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"I want to build a co-pilot for prepping my outbound advisory calls to Creon customers. Let me tell you about a recent call so you understand what these calls are like.\n\n[Describe: who you called, what they had bought or were considering, how you opened, what they were worried about, what you said, how it ended.]\n\nNow ask me 5–7 follow-up questions to make sure you understand my typical call shape, my tone, and what makes a call go well vs. badly.\""
+            "text": "I want to build a co-pilot for prepping my outbound advisory calls to Creon customers. Let me tell you about a recent call so you understand what these calls are like.\n\n[Describe: who you called, what they had bought or were considering, how you opened, what they were worried about, what you said, how it ended.]\n\nNow ask me 5–7 follow-up questions to make sure you understand my typical call shape, my tone, and what makes a call go well vs. badly."
           },
           {
             "type": "prose",
@@ -697,7 +697,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Based on what I just told you, write a one-page reference document that captures: what kind of calls these are, who Creon's typical customers are, what my tone is, what 'good' looks like for me. I'll save this into the Project for future runs.\""
+            "text": "Based on what I just told you, write a one-page reference document that captures: what kind of calls these are, who Creon's typical customers are, what my tone is, what 'good' looks like for me. I'll save this into the Project for future runs."
           },
           {
             "type": "prose",
@@ -705,7 +705,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You help me prep for outbound customer calls. You hold our products, my typical customer types, and notes on how I run these calls.\n\nWhen I give you a customer to prep for, suggest:\n1. A warm, natural opening line — not scripted.\n2. 3 questions I should ask to understand their needs.\n3. Likely objections they might have and how I'd respond.\n4. A soft CTA at the end of the call.\n\nKeep it conversational, never salesy. Always remind me that the goal is to help, not to push.\""
+            "text": "You help me prep for outbound customer calls. You hold our products, my typical customer types, and notes on how I run these calls.\n\nWhen I give you a customer to prep for, suggest:\n1. A warm, natural opening line — not scripted.\n2. 3 questions I should ask to understand their needs.\n3. Likely objections they might have and how I'd respond.\n4. A soft CTA at the end of the call.\n\nKeep it conversational, never salesy. Always remind me that the goal is to help, not to push."
           },
           {
             "type": "prose",
@@ -713,7 +713,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"I'm about to call [Customer A]. Here's what I know: they bought [product] last month, no contact since, no complaints flagged. The call is to check satisfaction and mention our extended warranty programme.\""
+            "text": "I'm about to call [Customer A]. Here's what I know: they bought [product] last month, no contact since, no complaints flagged. The call is to check satisfaction and mention our extended warranty programme."
           },
           {
             "type": "prose",
@@ -721,7 +721,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"'How are you feeling about your new windows' is too generic. Replace with something more specific to what they bought.\""
+            "text": "'How are you feeling about your new windows' is too generic. Replace with something more specific to what they bought."
           },
           {
             "type": "prose",
@@ -729,7 +729,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"When I paste my notes after a call, give me back: a structured summary of what was discussed, any commitments I made, and the 1-2 follow-up actions I need to take.\""
+            "text": "When I paste my notes after a call, give me back: a structured summary of what was discussed, any commitments I made, and the 1-2 follow-up actions I need to take."
           },
           {
             "type": "prose",
@@ -776,7 +776,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"Read this agreement. Summarise the key terms: who the parties are, the amount, interest rate, repayment schedule, key dates, and any clauses that are unusual or could matter later.\""
+          "text": "Read this agreement. Summarise the key terms: who the parties are, the amount, interest rate, repayment schedule, key dates, and any clauses that are unusual or could matter later."
         },
         {
           "type": "prose",
@@ -784,15 +784,15 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"When is the next payment due, and what happens if we miss it?\""
+          "text": "When is the next payment due, and what happens if we miss it?"
         },
         {
           "type": "prompt",
-          "text": "\"Can we repay this early? Under what conditions?\""
+          "text": "Can we repay this early? Under what conditions?"
         },
         {
           "type": "prompt",
-          "text": "\"Is there a clause that changes things if interest rates move?\""
+          "text": "Is there a clause that changes things if interest rates move?"
         },
         {
           "type": "prose",
@@ -800,7 +800,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"What questions should I be asking about this agreement that I haven't yet? Things that could matter but might not be obvious.\""
+          "text": "What questions should I be asking about this agreement that I haven't yet? Things that could matter but might not be obvious."
         },
         {
           "type": "prose",
@@ -820,7 +820,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You hold reference materials for our finance operations. [Adjust this opening line to describe your scope — e.g. 'across our group of companies in NL/BE/PL', or whatever fits.]\n\nWhen I ask a question:\n- Find the answer in the uploaded documents.\n- Quote the relevant clause or section so I can verify.\n- If multiple documents are relevant, list each one with its specific contribution.\n- If you can't find an answer in the documents, say so clearly — never guess on contractual or financial matters.\n\nNever produce financial figures of your own — counts, sums, balances. If I ask 'how much do we owe?' your answer should always be 'according to [document name], the principal is [X] and the schedule says [Y]' — quoting the document, not calculating.\n\nAlways remind me to verify the source before acting on anything material.\""
+            "text": "You hold reference materials for our finance operations. [Adjust this opening line to describe your scope — e.g. 'across our group of companies in NL/BE/PL', or whatever fits.]\n\nWhen I ask a question:\n- Find the answer in the uploaded documents.\n- Quote the relevant clause or section so I can verify.\n- If multiple documents are relevant, list each one with its specific contribution.\n- If you can't find an answer in the documents, say so clearly — never guess on contractual or financial matters.\n\nNever produce financial figures of your own — counts, sums, balances. If I ask 'how much do we owe?' your answer should always be 'according to [document name], the principal is [X] and the schedule says [Y]' — quoting the document, not calculating.\n\nAlways remind me to verify the source before acting on anything material."
           },
           {
             "type": "prose",
@@ -828,7 +828,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Looking at all the agreements in this Project, what are the next 5 key dates across all of them? Quote each date with the document it comes from.\""
+            "text": "Looking at all the agreements in this Project, what are the next 5 key dates across all of them? Quote each date with the document it comes from."
           }
         ]
       },
@@ -843,7 +843,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Match each transaction to the most likely order.\n\nOutput a table with these columns: Transaction date, Transaction amount, Likely matching order, Confidence (high / medium / low), Reason for the match.\n\nFlag any transaction that has no confident match — those are the ones I'll need to investigate myself.\n\nDon't invent matches. If there's nothing plausible, say 'no match found' in that row.\""
+            "text": "Match each transaction to the most likely order.\n\nOutput a table with these columns: Transaction date, Transaction amount, Likely matching order, Confidence (high / medium / low), Reason for the match.\n\nFlag any transaction that has no confident match — those are the ones I'll need to investigate myself.\n\nDon't invent matches. If there's nothing plausible, say 'no match found' in that row."
           },
           {
             "type": "prose",
@@ -862,7 +862,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Here is our consolidated overview. The relationships I rely on for this sheet are:\n- The group total in column X should equal the sum of the subsidiary figures above it.\n- For each entity, the figures in the comparison columns should reflect the same accounting basis as the current period.\n- [Any other internal-consistency rule that applies to your sheet.]\n\nCheck each row and column against these rules. Flag any inconsistency. Don't recalculate the figures themselves — just check whether the numbers as presented respect the relationships above.\n\nAlso flag anything that looks anomalous at a glance — an outlier value, a missing figure, a sign that may be wrong, a unit mismatch.\n\nList everything I should double-check before this sheet goes further.\""
+            "text": "Here is our consolidated overview. The relationships I rely on for this sheet are:\n- The group total in column X should equal the sum of the subsidiary figures above it.\n- For each entity, the figures in the comparison columns should reflect the same accounting basis as the current period.\n- [Any other internal-consistency rule that applies to your sheet.]\n\nCheck each row and column against these rules. Flag any inconsistency. Don't recalculate the figures themselves — just check whether the numbers as presented respect the relationships above.\n\nAlso flag anything that looks anomalous at a glance — an outlier value, a missing figure, a sign that may be wrong, a unit mismatch.\n\nList everything I should double-check before this sheet goes further."
           },
           {
             "type": "prose",
@@ -870,7 +870,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now draft the explanatory narrative for this sheet. Audience: senior leadership, 5-minute read. Cover: what's the overall picture across the entities, where things are healthy, where they need attention, anything notable in the period-over-period comparison. Tone: professional, factual, no jargon for jargon's sake.\n\nFor anything that calls for an explanation of cause, frame it as 'this likely reflects X' — don't assert causes you can't be sure of.\""
+            "text": "Now draft the explanatory narrative for this sheet. Audience: senior leadership, 5-minute read. Cover: what's the overall picture across the entities, where things are healthy, where they need attention, anything notable in the period-over-period comparison. Tone: professional, factual, no jargon for jargon's sake.\n\nFor anything that calls for an explanation of cause, frame it as 'this likely reflects X' — don't assert causes you can't be sure of."
           },
           {
             "type": "prose",
@@ -906,7 +906,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"These are the emails I received in one day. For each, classify on three dimensions:\n1. Urgency (urgent / today / this week / no rush)\n2. Type (complaint / question / order issue / internal / other)\n3. Action needed (reply / forward / FYI only)\n\nOutput as a table.\""
+          "text": "These are the emails I received in one day. For each, classify on three dimensions:\n1. Urgency (urgent / today / this week / no rush)\n2. Type (complaint / question / order issue / internal / other)\n3. Action needed (reply / forward / FYI only)\n\nOutput as a table."
         },
         {
           "type": "prose",
@@ -914,7 +914,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"Now group them. What's the actual shape of this day's inbox? What dominated my attention? Was there anything that should have been escalated faster?\""
+          "text": "Now group them. What's the actual shape of this day's inbox? What dominated my attention? Was there anything that should have been escalated faster?"
         },
         {
           "type": "prose",
@@ -934,7 +934,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"I want to build a routing assistant for incoming emails. Let me describe my team:\n\n- [Name or code], handles [expertise], typically available [pattern]\n- [Name or code], handles [expertise], typically available [pattern]\n- ...\n\nRouting rules I follow today:\n- Pre-delivery emails (order changes, delivery time questions, installation questions) go to Sofia's Administration team.\n- Post-delivery emails (customer support, complaints, after-sales) go to Amber — but only in the afternoons. Her mornings are for marketing work. Post-delivery urgent in the morning escalates to me.\n- [Add other rules from your head.]\n\nNow ask me 5–8 follow-up questions to make sure you understand my routing logic. Cover anything I might have left out — edge cases, what to do when someone's out, how to handle ambiguity.\""
+            "text": "I want to build a routing assistant for incoming emails. Let me describe my team:\n\n- [Name or code], handles [expertise], typically available [pattern]\n- [Name or code], handles [expertise], typically available [pattern]\n- ...\n\nRouting rules I follow today:\n- Pre-delivery emails (order changes, delivery time questions, installation questions) go to Sofia's Administration team.\n- Post-delivery emails (customer support, complaints, after-sales) go to Amber — but only in the afternoons. Her mornings are for marketing work. Post-delivery urgent in the morning escalates to me.\n- [Add other rules from your head.]\n\nNow ask me 5–8 follow-up questions to make sure you understand my routing logic. Cover anything I might have left out — edge cases, what to do when someone's out, how to handle ambiguity."
           },
           {
             "type": "prose",
@@ -942,7 +942,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Based on what I just told you, write a one-page routing reference. I'll save it into the Project so future runs have it as context.\""
+            "text": "Based on what I just told you, write a one-page routing reference. I'll save it into the Project so future runs have it as context."
           },
           {
             "type": "prose",
@@ -950,7 +950,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You help me triage incoming emails for routing to my team. You have the team roster and routing rules in your knowledge.\n\nFor each email I paste, suggest:\n1. Urgency.\n2. The right person or team to route to.\n3. Any context the recipient will need to handle it.\n\nWhen I tell you who is out today, or who has limited time, factor that in.\n\nAlways explain your routing recommendation in one line. Be concise.\n\nIf an email looks like it could be a pattern rather than a one-off (similar to others you've seen lately), flag that explicitly and tell me why.\""
+            "text": "You help me triage incoming emails for routing to my team. You have the team roster and routing rules in your knowledge.\n\nFor each email I paste, suggest:\n1. Urgency.\n2. The right person or team to route to.\n3. Any context the recipient will need to handle it.\n\nWhen I tell you who is out today, or who has limited time, factor that in.\n\nAlways explain your routing recommendation in one line. Be concise.\n\nIf an email looks like it could be a pattern rather than a one-off (similar to others you've seen lately), flag that explicitly and tell me why."
           },
           {
             "type": "prose",
@@ -958,7 +958,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Context for today: Sofia is on leave until Friday. Amber has a meeting all afternoon. I have ~2 hours of focus time mid-morning.\""
+            "text": "Context for today: Sofia is on leave until Friday. Amber has a meeting all afternoon. I have ~2 hours of focus time mid-morning."
           },
           {
             "type": "prose",
@@ -966,11 +966,11 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You routed [X] to Y but I'd never send Y something like that. Add a rule: never route [type] to Y.\""
+            "text": "You routed [X] to Y but I'd never send Y something like that. Add a rule: never route [type] to Y."
           },
           {
             "type": "prompt",
-            "text": "\"Your urgency calls are too cautious. Treat 'as soon as possible' as 'this week' unless the customer explicitly says they're blocked.\""
+            "text": "Your urgency calls are too cautious. Treat 'as soon as possible' as 'this week' unless the customer explicitly says they're blocked."
           },
           {
             "type": "prose",
@@ -989,7 +989,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Here are all the emails I handled today: [paste].\n\nGive me an end-of-day briefing:\n1. The 3 most important things that happened today.\n2. Any emerging patterns or recurring issues I should be aware of.\n3. Anything I should follow up on tomorrow.\n4. Anything Geoffrey or Sandra should know about.\n\nThen ask me 3 questions about today to surface anything you might have missed from reading the emails alone.\""
+            "text": "Here are all the emails I handled today: [paste].\n\nGive me an end-of-day briefing:\n1. The 3 most important things that happened today.\n2. Any emerging patterns or recurring issues I should be aware of.\n3. Anything I should follow up on tomorrow.\n4. Anything Geoffrey or Sandra should know about.\n\nThen ask me 3 questions about today to surface anything you might have missed from reading the emails alone."
           },
           {
             "type": "prose",
@@ -997,7 +997,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Now produce the final end-of-day briefing as a clean document, incorporating what I told you.\""
+            "text": "Now produce the final end-of-day briefing as a clean document, incorporating what I told you."
           },
           {
             "type": "prose",
@@ -1016,7 +1016,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You hold our complaint history for analysis.\n\nWhen I ask a question, base your answer on the data in this Project.\n\nIf I ask for counts, percentages or volumes — give them, but caveat that you may be off by a small margin on exact numbers (you're not a database). The patterns and themes you identify will be accurate; the specific counts may not be.\n\nAlways quote 2 or 3 specific examples to back up any claim you make about a pattern.\n\nIf you can't answer something from the uploaded data, say so clearly.\""
+            "text": "You hold our complaint history for analysis.\n\nWhen I ask a question, base your answer on the data in this Project.\n\nIf I ask for counts, percentages or volumes — give them, but caveat that you may be off by a small margin on exact numbers (you're not a database). The patterns and themes you identify will be accurate; the specific counts may not be.\n\nAlways quote 2 or 3 specific examples to back up any claim you make about a pattern.\n\nIf you can't answer something from the uploaded data, say so clearly."
           },
           {
             "type": "prose",
@@ -1024,19 +1024,19 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"What were the top 3 complaint types over this period?\""
+            "text": "What were the top 3 complaint types over this period?"
           },
           {
             "type": "prompt",
-            "text": "\"Are there any complaints that seem to recur from the same customer or about the same product variant?\""
+            "text": "Are there any complaints that seem to recur from the same customer or about the same product variant?"
           },
           {
             "type": "prompt",
-            "text": "\"If you had to flag one thing that seems to be getting worse, what would it be?\""
+            "text": "If you had to flag one thing that seems to be getting worse, what would it be?"
           },
           {
             "type": "prompt",
-            "text": "\"Is there a complaint type that we're handling well — fewer of them showing up over time?\""
+            "text": "Is there a complaint type that we're handling well — fewer of them showing up over time?"
           },
           {
             "type": "prose",
@@ -1072,7 +1072,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"That's it — the rough idea. I want a developer to be able to act on this without coming back to me with five questions.\""
+          "text": "That's it — the rough idea. I want a developer to be able to act on this without coming back to me with five questions."
         },
         {
           "type": "prose",
@@ -1080,7 +1080,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"Before you structure this, ask me 5 to 7 questions that a developer would need answered before starting work. Cover anything I left vague.\""
+          "text": "Before you structure this, ask me 5 to 7 questions that a developer would need answered before starting work. Cover anything I left vague."
         },
         {
           "type": "prose",
@@ -1088,7 +1088,7 @@ const CONTENT = {
         },
         {
           "type": "prompt",
-          "text": "\"Now produce a one-page brief I could send to a developer. Include: what it is, why it matters, what success looks like, edge cases to watch for, anything that's out of scope.\""
+          "text": "Now produce a one-page brief I could send to a developer. Include: what it is, why it matters, what success looks like, edge cases to watch for, anything that's out of scope."
         },
         {
           "type": "prose",
@@ -1108,7 +1108,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"I work with a small development team. I want to use you to turn ideas in my head into specs they can act on without coming back to me for clarification.\n\nLet me tell you how we work today: [explain — what they build, what kind of features you usually ask for, what your dev team usually struggles with when your requirements arrive, what 'good' acceptance criteria look like for you].\n\nThen ask me 5 to 8 follow-up questions about anything I left out — including what level of detail my developers expect, what they tend to push back on, and anything that's specific to how we work.\""
+            "text": "I work with a small development team. I want to use you to turn ideas in my head into specs they can act on without coming back to me for clarification.\n\nLet me tell you how we work today: [explain — what they build, what kind of features you usually ask for, what your dev team usually struggles with when your requirements arrive, what 'good' acceptance criteria look like for you].\n\nThen ask me 5 to 8 follow-up questions about anything I left out — including what level of detail my developers expect, what they tend to push back on, and anything that's specific to how we work."
           },
           {
             "type": "prose",
@@ -1116,7 +1116,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Based on what I told you, write a one-page reference document about my dev team, my product, and what good specs look like for us. I'll save it into the Project so future runs have this as context.\""
+            "text": "Based on what I told you, write a one-page reference document about my dev team, my product, and what good specs look like for us. I'll save it into the Project so future runs have this as context."
           },
           {
             "type": "prose",
@@ -1124,7 +1124,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"You help me turn ideas in my head into specs my dev team can act on.\n\nWhen I describe an idea, your job is:\n1. Ask me 5 to 7 questions to fill the gaps in what I told you — focus on what a developer would need that I haven't said.\n2. After I answer, produce a one-page brief with these sections: What it is, Why it matters, Acceptance criteria (what does 'done' look like — testable, not vague), Edge cases to watch for, Out of scope (what we're NOT building).\n3. Suggest 2 to 3 specific test cases for the things I'd want to verify myself once it's built.\n\nTone: clear, concrete, not corporate. Write for developers, not for executives.\n\nNever make up business logic I didn't tell you. If something is unclear, ask before guessing.\""
+            "text": "You help me turn ideas in my head into specs my dev team can act on.\n\nWhen I describe an idea, your job is:\n1. Ask me 5 to 7 questions to fill the gaps in what I told you — focus on what a developer would need that I haven't said.\n2. After I answer, produce a one-page brief with these sections: What it is, Why it matters, Acceptance criteria (what does 'done' look like — testable, not vague), Edge cases to watch for, Out of scope (what we're NOT building).\n3. Suggest 2 to 3 specific test cases for the things I'd want to verify myself once it's built.\n\nTone: clear, concrete, not corporate. Write for developers, not for executives.\n\nNever make up business logic I didn't tell you. If something is unclear, ask before guessing."
           },
           {
             "type": "prose",
@@ -1132,11 +1132,11 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"This brief is good but acceptance criteria need to be more specific. Look at AC #2 — 'user can log in' isn't a criterion. Rewrite it as something a developer can verify pass/fail.\""
+            "text": "This brief is good but acceptance criteria need to be more specific. Look at AC #2 — 'user can log in' isn't a criterion. Rewrite it as something a developer can verify pass/fail."
           },
           {
             "type": "prompt",
-            "text": "\"Edge cases are too generic. They should be specific to our product. For example, here's an edge case I'd expect you to surface: [specific example].\""
+            "text": "Edge cases are too generic. They should be specific to our product. For example, here's an edge case I'd expect you to surface: [specific example]."
           },
           {
             "type": "prose",
@@ -1144,7 +1144,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Turn this into a clean bug report: reproducible steps, expected vs actual behaviour, severity, anything I'd want a developer to know before they start debugging. If anything is unclear from what I gave you, list the questions I should answer before sending.\""
+            "text": "Turn this into a clean bug report: reproducible steps, expected vs actual behaviour, severity, anything I'd want a developer to know before they start debugging. If anything is unclear from what I gave you, list the questions I should answer before sending."
           },
           {
             "type": "prose",
@@ -1152,7 +1152,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"This is a spec my dev team wrote. Review it as if you were me — what's missing, what would a customer notice that this doesn't address, what edge cases haven't been covered, what would I want clarified before signing off? Be specific, not generic.\""
+            "text": "This is a spec my dev team wrote. Review it as if you were me — what's missing, what would a customer notice that this doesn't address, what edge cases haven't been covered, what would I want clarified before signing off? Be specific, not generic."
           },
           {
             "type": "prose",
@@ -1160,7 +1160,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Draft a reply declining this feature request. Polite, specific about why (use my reason — don't soften it into corporate-speak), and offer one alternative if there is one. Keep it short.\""
+            "text": "Draft a reply declining this feature request. Polite, specific about why (use my reason — don't soften it into corporate-speak), and offer one alternative if there is one. Keep it short."
           },
           {
             "type": "prose",
@@ -1179,7 +1179,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Here's an email I just received. In under 5 lines: tell me what action this needs from me, who else (if anyone) needs to be looped in, and what the smallest version of 'handling this' looks like. Don't draft a reply yet.\""
+            "text": "Here's an email I just received. In under 5 lines: tell me what action this needs from me, who else (if anyone) needs to be looped in, and what the smallest version of 'handling this' looks like. Don't draft a reply yet."
           },
           {
             "type": "prose",
@@ -1187,7 +1187,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"OK, draft the reply. Two versions: short and direct, or warmer with one sentence of context. Both in my voice — I'll show you how to learn that in a minute.\""
+            "text": "OK, draft the reply. Two versions: short and direct, or warmer with one sentence of context. Both in my voice — I'll show you how to learn that in a minute."
           },
           {
             "type": "prose",
@@ -1195,7 +1195,7 @@ const CONTENT = {
           },
           {
             "type": "prompt",
-            "text": "\"Here are 3 to 5 emails I've sent recently that sound exactly like me. [Paste them.] From now on, when you draft replies for me, match this voice. List the rules you'll follow so I can correct anything that's wrong.\""
+            "text": "Here are 3 to 5 emails I've sent recently that sound exactly like me. [Paste them.] From now on, when you draft replies for me, match this voice. List the rules you'll follow so I can correct anything that's wrong."
           },
           {
             "type": "prose",

@@ -34,7 +34,7 @@ LEAVE_WITH_STRIP_RE = re.compile(
 
 def extract_prompts(bq_text):
     prompts = []
-    for m in re.finditer(r'\*("[\s\S]+?")\*', bq_text):
+    for m in re.finditer(r'\*"([\s\S]+?)"\*', bq_text):
         raw = m.group(1)
         lines = raw.split('\n')
         cleaned_lines = [re.sub(r'^\*+|\*+$', '', l).strip() for l in lines]
