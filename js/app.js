@@ -306,7 +306,7 @@ function initWarmup() {
   // Notes
   const notesEl = document.getElementById('notes-content');
   if (notesEl && person.notesNodes?.length) {
-    renderNodes(person.notesNodes, null, lang, person.altLang, notesEl);
+    renderNodes(person.notesNodes, trans?.notes ?? null, lang, person.altLang, notesEl);
   } else if (notesEl) {
     notesEl.closest('.notes-section')?.remove();
   }

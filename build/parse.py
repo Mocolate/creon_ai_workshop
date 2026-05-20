@@ -243,6 +243,7 @@ def map_translations(en_data, trans_data, person_id):
                               'warmup'),
         },
         'paths': [],
+        'notes': {'nodes': align(en_data['notesNodes'], trans_data['notesNodes'], 'notes')} if en_data['notesNodes'] else None,
     }
 
     for pi, (en_path, tr_path) in enumerate(zip(en_data['paths'], trans_data['paths'])):
