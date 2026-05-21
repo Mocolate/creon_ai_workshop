@@ -19,6 +19,7 @@ PEOPLE = [
     dict(file='05_lisette.md',  trans='05_lisette_nl.md',  id='lisette',  displayName='Lisette',  altLang='nl'),
     dict(file='06_bart.md',     trans='06_bart_nl.md',     id='bart',     displayName='Bart',     altLang='nl'),
     dict(file='09_geoffrey.md', trans='09_geoffrey_nl.md', id='geoffrey', displayName='Geoffrey', altLang='nl'),
+    dict(file='10_thomas.md',   trans='10_thomas_nl.md',   id='thomas',   displayName='Thomas',   altLang='nl'),
 ]
 
 # "You'll leave with" in all three languages

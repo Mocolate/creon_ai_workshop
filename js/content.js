@@ -1210,5 +1210,175 @@ const CONTENT = {
         "md": "## What we deliberately didn't do today\n\nA few things came up in conversation that aren't on this worksheet — here's why each one is off the worksheet and where it goes instead.\n\n- **The dev testing environment friction.** Setting up a dev environment to test changes, getting files in and out of it, the dependency on developers to verify things you'd ideally check yourself — all of that came up in conversation. **It's a real problem, and it's bigger than Claude.** Claude can write better test plans (Path 1 stretch goal), but it can't install authenticators or copy files for you. This belongs on the parking-lot board — it's a process and infrastructure conversation to have with Xelerit and Bart properly, not solving in 90 minutes here.\n\n- **Anything involving real customer data.** Nothing on this worksheet asks you to upload anything sensitive. The chaotic-input → spec pattern works equally well with ideas as it does with documents.\n\n- **Pretending Claude is magic.** It's not. You're going to find places it gets things wrong, misunderstands your context, or produces something generic. The worksheet is set up so you can test whether the pattern earns its place — not so you have to take our word for it.\n\n## End-of-day check\n\nBefore you leave, decide:\n- [ ] Does the warm-up pattern (chaotic input → questions → structured output) save you time vs writing the same thing yourself?\n- [ ] If yes, do you have one working Project (Path 1) or a reusable workflow (Path 2) — or both — that you'd actually open tomorrow?\n- [ ] Anything you want on the parking-lot board for Xelerit follow-up? (The testing environment problem is already there — what else?)\n\nIf your answer to the first question is \"no,\" tell us before you leave. That's useful for us too.\n\nPawel and Mara are around all afternoon."
       }
     ]
+  },
+  "thomas": {
+    "id": "thomas",
+    "displayName": "Thomas",
+    "altLang": "nl",
+    "langs": [
+      "en",
+      "nl"
+    ],
+    "introMd": "**Welcome to your afternoon.** This worksheet is built around the marketing data you already work with — Google Ads, Meta, LinkedIn, soon TikTok — and the harder questions that don't show up in any single platform's dashboard. The goal is for you to leave with at least one working tool that helps you see things in the data you couldn't easily see before.\n\nYou'll do a short warm-up to feel how Claude works with your numbers, then **pick one of three paths**. Each one ends with something you can take back to your work.\n\n**Before you start — getting things into Claude.** You don't have to copy-paste everything. In any chat window you can:\n\n- Drag and drop files (PDFs, Word, Excel, images) straight in.\n- Click the paperclip / attachment button to upload from your computer.\n- Paste screenshots directly with Ctrl+V or Cmd+V — handy for grabbing the structure of something without retyping.\n- On phone or tablet, attach photos from your camera roll or take one on the spot.\n\nUse whatever's easiest for the thing in front of you.",
+    "warmup": {
+      "title": "Ask Claude what stands out in last month's data",
+      "duration": "~15 min",
+      "pickPath": "Three paths below. Each ends with a working tool. **Not sure where to start? Try Path 1** — it's the most universally useful for your day-to-day. Path 3 is more advanced and uses a different Claude feature (Code Execution) — it's the one tied to Creon's seasonality question, so worth a try if you have the time and the historical data on hand.",
+      "nodes": [
+        {
+          "type": "prose",
+          "md": "**You'll need:** a recent monthly export from one of your platforms — Google Ads or Meta is fine. Campaign-level data with the usual columns: spend, impressions, clicks, conversions, CTR, CPA, by campaign or ad set.\n\n**Step 1.** Open a new chat in Claude.\n\n**Step 2.** Upload your export. Then ask:"
+        },
+        {
+          "type": "prompt",
+          "text": "This is last month's [Google Ads / Meta] data for Creon. Read through it and tell me: what jumps out? What's working unusually well, what's underperforming, and is there anything you notice that I might miss looking at this in the platform dashboard?"
+        },
+        {
+          "type": "prose",
+          "md": "**Step 3.** When Claude responds, push back:"
+        },
+        {
+          "type": "prompt",
+          "text": "You said [campaign X] is underperforming — show me the specific numbers you're basing that on. What's your benchmark for 'underperforming'?"
+        },
+        {
+          "type": "prose",
+          "md": "This matters. Claude can be confidently vague. Make it cite the rows.\n\n**Step 4.** One more follow-up:"
+        },
+        {
+          "type": "prompt",
+          "text": "Now group the campaigns into 2 or 3 buckets based on patterns you see — not by my naming convention, by actual performance behaviour. What groups would you draw?"
+        },
+        {
+          "type": "prose",
+          "md": "**What you just did.** Gave Claude a flat export and got back something closer to a read of the data — what's grouped with what, what's an outlier, what deserves attention. That's the move you'll build on in Path 1."
+        }
+      ]
+    },
+    "paths": [
+      {
+        "title": "Build your Marketing Performance Project",
+        "duration": "~25 min",
+        "leaveWith": "a Claude Project that knows Creon's products, your campaign structure, and your platform mix — ready for the recurring \"what's happening with our ads right now\" question.",
+        "nodes": [
+          {
+            "type": "prose",
+            "md": "#### Step 1. Create the Project.\n- In Claude, click **Projects** in the left sidebar, then **New project**.\n- Name it: **Thomas — Marketing Performance**.\n\n#### Step 2. Upload your materials.\nUpload what you have handy:\n\n- Last 1–3 months of exports from each platform (Google Ads, Meta, LinkedIn).\n- A short description of Creon's product lines and what each campaign is targeting — even a few bullet points typed straight into the Project instructions is enough.\n- Anything else you reference often when reviewing performance.\n\n#### Step 3. Give the Project its instructions.\nPaste this into the **Custom instructions** field and adjust:"
+          },
+          {
+            "type": "prompt",
+            "text": "You help me review and analyse Creon's paid marketing performance across Google Ads, Meta, LinkedIn, and soon TikTok.\n\nWhen I paste or upload data, do the following:\n1. Read it carefully and tell me what stands out — both positive and concerning.\n2. Always cite the specific campaigns and numbers you're basing your read on. Never make claims you can't point to in the data.\n3. Group findings by significance — lead with what actually matters, not what's easy to say.\n4. When you make a recommendation, also tell me what you'd want to know before acting on it. I want to act on data, not on guesses.\n\nBe honest when something is ambiguous — don't manufacture insight where there isn't one. 'I don't see a clear pattern here' is a valid answer."
+          },
+          {
+            "type": "prose",
+            "md": "#### Step 4. Test it fresh.\nOpen a new chat **inside the Project**. Paste a fresh data export. See what comes out.\n\n#### Step 5. Refine.\nPush back on anything that's too generic:"
+          },
+          {
+            "type": "prompt",
+            "text": "'CTR could be improved' isn't useful. Which specific campaigns, and what would you compare them against?"
+          },
+          {
+            "type": "prompt",
+            "text": "You're treating brand and prospecting campaigns the same — they shouldn't be benchmarked against each other. Adjust."
+          },
+          {
+            "type": "prose",
+            "md": "Update the Project instructions every time you find a rule that should be permanent.\n\n**Important:** Claude doesn't know your strategy unless you tell it. Its first reads will be generic; they get sharper as you correct it.\n\n#### Stretch goal\nAdd this instruction: *\"At the end of every monthly review, suggest the 3 most useful experiments to run next month — be specific about budget shifts, creative changes, or audience tests.\"*"
+          }
+        ]
+      },
+      {
+        "title": "Cross-platform comparison",
+        "duration": "~25 min",
+        "leaveWith": "a workflow that lets you compare performance across Google Ads, Meta, and LinkedIn on the same question — without staring at three dashboards side by side.",
+        "nodes": [
+          {
+            "type": "prose",
+            "md": "This path is for the moments when you want to ask \"where is our money working hardest right now\" and get an honest answer that crosses platforms.\n\n#### Step 1. Open a new chat (inside your Path 1 Project if you did it, or a fresh chat).\n\n#### Step 2. Upload one month of data from each platform.\nThree separate files is fine — Claude will read all of them.\n\n#### Step 3. Ask the comparison question."
+          },
+          {
+            "type": "prompt",
+            "text": "Here's last month's data from Google Ads, Meta, and LinkedIn. I want a side-by-side comparison.\n\nBuild me a single table with: platform, total spend, total conversions, blended CPA, and your read of how each platform is performing relative to the others.\n\nThen, separately: which platform did our money work hardest on last month, and why? Be specific about what 'hardest' means — different platforms aren't directly comparable, so tell me what comparison you're making and what its limits are."
+          },
+          {
+            "type": "prose",
+            "md": "#### Step 4. Push on what's missing.\nClaude will produce a table. Read it critically:"
+          },
+          {
+            "type": "prompt",
+            "text": "You compared on CPA but Meta has a longer attribution window than Google. Adjust your comparison or tell me why you didn't."
+          },
+          {
+            "type": "prompt",
+            "text": "LinkedIn has tiny volume — is the CPA there even statistically meaningful? Tell me what sample size you'd want before drawing conclusions."
+          },
+          {
+            "type": "prose",
+            "md": "The point isn't to win the argument with Claude — it's to surface the assumptions it made that you'd otherwise miss.\n\n#### Step 5. Save the comparison structure.\nIf you do this monthly, save the prompt. Each month becomes: upload three files, run the same prompt, get a comparable read.\n\n#### Stretch goal\nAsk: *\"Looking at the last 3 months across all three platforms, has the relative performance shifted? Which platform is trending up and which is trending down?\"*"
+          }
+        ]
+      },
+      {
+        "title": "Seasonality analysis with Code Execution",
+        "duration": "~30 min, advanced",
+        "leaveWith": "a real analysis of Creon's seasonal pattern across 3 years of data — produced by Claude writing actual Python code — plus a draft of how to act on it for the next 12 months.",
+        "nodes": [
+          {
+            "type": "prose",
+            "md": "**Why this path is separate.** Plain Claude is unreliable as a calculator. For a real numerical analysis across thousands of rows of data over 3 years, you need **Code Execution** — a feature where Claude writes and runs real Python code on your files. You bring the data; Claude writes the code; Python does the maths.\n\n#### Step 1. Open a new chat in Claude.\nMake sure **Code Execution / File Creation** is on in **Settings → Feature Preview**. Grab Mara or Pawel if you can't find it.\n\n#### Step 2. Upload your historical data.\nYou said you have ~3 years of data. Upload as much of it as you have ready:\n\n- Sales or conversion data by month (the actual business outcome you care about).\n- Ad spend by platform by month, if you have it consolidated.\n- Anything else that varies over the year (product mix, regional split, customer type).\n\nIf the data is in many files, that's fine — upload them all. Claude will figure out how to combine them.\n\n#### Step 3. Ask Claude to interview you first."
+          },
+          {
+            "type": "prompt",
+            "text": "I've uploaded ~3 years of Creon's marketing and sales data. Before you write any code, ask me up to 8 questions so you understand the data and what I'm trying to learn.\n\nSpecifically: I want to understand Creon's seasonal pattern — when do we sell what, and how strong is the seasonal effect — so I can plan budget allocation and creative timing for the next 12 months."
+          },
+          {
+            "type": "prose",
+            "md": "Answer the questions honestly. This step is what separates a useful analysis from a generic one.\n\n#### Step 4. Ask Claude to produce the seasonality analysis."
+          },
+          {
+            "type": "prompt",
+            "text": "Now write Python code to analyse the seasonality in this data.\n\nSpecifically:\n1. Produce a clear monthly pattern across the 3 years — for each product category, when does demand peak and when does it dip?\n2. Quantify the seasonal effect: is the peak month 20% above average, 50%, 2x?\n3. Show me whether the pattern is consistent across the 3 years or whether it's shifting.\n4. Highlight anything that doesn't fit a clean seasonal story — anomalies, structural breaks, things worth investigating.\n\nRun the code and show me the results as both a table and a chart. Be honest about what the data does and doesn't tell us — if the pattern is noisy, say so."
+          },
+          {
+            "type": "prose",
+            "md": "Look at what comes back. Charts and numbers should match your intuition for *some* of it; if they don't match anywhere, something's off and you should ask Claude to walk you through the data.\n\n#### Step 5. Push on the analysis.\nRead it critically:"
+          },
+          {
+            "type": "prompt",
+            "text": "You said [product category] peaks in May. Show me the monthly numbers that led to that — I want to see the 3 Mays side by side."
+          },
+          {
+            "type": "prompt",
+            "text": "The pattern looks weaker in 2024 than 2022. Why? Was there a campaign or external event that would explain that, or is the seasonal effect actually fading?"
+          },
+          {
+            "type": "prose",
+            "md": "Push until you trust the read.\n\n#### Step 6. Ask for the action plan."
+          },
+          {
+            "type": "prompt",
+            "text": "Based on this seasonality analysis, draft a 12-month plan for me:\n\n- When should I increase spend, and by roughly how much?\n- When should I shift creative toward which product categories?\n- Where are the quiet months I should use for testing rather than scaling?\n- What should I measure as the year goes on to know whether the seasonal pattern is holding or breaking?\n\nFrame this as suggestions I can act on, with the reasoning visible — so I can argue with any of it."
+          },
+          {
+            "type": "prose",
+            "md": "#### Step 7. Save the work.\n- Download any files Claude produced (charts, tables, the analysis itself).\n- Save the chat — you'll want to come back to it in a few months and re-run with updated data.\n\n**Important and non-negotiable:**\n- **Verify the code's reading of your data** before you trust the conclusions. Ask Claude *\"show me the first 10 rows of how you interpreted my data — did you get the columns right?\"*\n- **Treat the action plan as a starting point**, not a final budget. The analysis tells you about *the past 3 years*; the next 12 months are uncertain. Use the patterns as a prior, not a prediction.\n\n#### Stretch goal — combine with platform mix\nAsk:"
+          },
+          {
+            "type": "prompt",
+            "text": "Looking at the seasonal pattern and the cross-platform performance: should the platform mix change by season? Is there a month where Meta works better than Google, or vice versa?"
+          },
+          {
+            "type": "prose",
+            "md": "That's the kind of question only emerges when you have the historical data and the cross-platform view in the same place."
+          }
+        ]
+      }
+    ],
+    "notesNodes": [
+      {
+        "type": "prose",
+        "md": "## What we deliberately didn't do today\n\nA few use cases worth flagging but not building into this worksheet — and why:\n\n- **Direct integration with ad platforms.** Claude can't currently drive the Google Ads / Meta / LinkedIn UIs to make changes. There may be API or automation paths worth exploring — that goes on the \"Beyond Claude alone\" board at the front of the room.\n- **Predicting next month's CPA from this month's data.** Tempting, but Claude (even with Code Execution) isn't a forecasting tool. The honest version is what Path 3 does: surface the pattern, give you a prior, leave the prediction to you.\n- **Automated reporting.** You could imagine Claude assembling your weekly or monthly report automatically. Doable, but a different kind of conversation — happy to talk about it after the workshop.\n\n## End-of-day check\n\nBefore you leave today, make sure:\n- [ ] You have at least one working Project (Path 1, or your Path 3 chat saved) that you can reopen tomorrow.\n- [ ] You've tested it with real data.\n- [ ] You've added the materials or context Claude was missing during testing.\n- [ ] You know your next concrete step — even \"next monthly review goes through the Project\" is enough.\n\nIf you didn't finish your path, take this worksheet home and continue when you have time.\n\nPawel and Mara are around all afternoon — grab us anytime."
+      }
+    ]
   }
 };
