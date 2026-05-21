@@ -14,7 +14,7 @@ const CONTENT = {
     "warmup": {
       "title": "Find the patterns in a stack of quality remarks",
       "duration": "~15 min",
-      "pickPath": "Four paths below. Each one ends with a working tool you can use after today. **Not sure where to start? Try Path 1** — it's the one most directly tied to your day-to-day. Path 4 is more advanced and uses a different Claude feature (Code Execution) — it's tied to one of the harder problems you handle, so worth a try if you have time.",
+      "pickPath": "Five paths below. Each one ends with a working tool you can use after today. **Not sure where to start? Try Path 1** — it's the one most directly tied to your day-to-day. Path 4 is more advanced and uses a different Claude feature (Code Execution) — it's tied to one of the harder problems you handle, so worth a try if you have time. Path 5 is for the HR side of your role — the disciplinary conversations that need to stay within Polish labour law.",
       "nodes": [
         {
           "type": "prose",
@@ -214,12 +214,63 @@ const CONTENT = {
             "md": "That's the version that scales — one upload, one run, the whole bonus table at once."
           }
         ]
+      },
+      {
+        "title": "Build your HR Discipline Sparring Partner",
+        "duration": "~25 min",
+        "leaveWith": "a Claude Project loaded with the Polish Labour Code (Kodeks pracy) and your company's internal HR policies — that helps you think through difficult disciplinary conversations *and* surfaces what the law says about how to handle them.",
+        "nodes": [
+          {
+            "type": "prose",
+            "md": "When an employee keeps making mistakes on the production floor, you need two things at once: a way to have the conversation that's firm but constructive, and confidence that you're staying within Polish labour law. This Project gives you a sparring partner for both.\n\n**Important framing up front.** Claude is **not your lawyer**. Even with the Kodeks pracy uploaded, it can misapply a correct article to the wrong situation. This Project helps you *think clearly* about a situation and *find the relevant law to verify* — but anything material always goes past a real HR specialist or lawyer before action.\n\n#### Step 1. Gather your materials before the workshop ends (max 5 min)\n**Minimum to start:**\n- A copy of the **Kodeks pracy** (Polish Labour Code). The official version is available on `isap.sejm.gov.pl`. Download as PDF.\n- Creon's internal HR handbook / regulamin pracy, if one exists.\n\n**Ideal additions** (if quick to find):\n- Any internal disciplinary policy documents.\n- Templates of past *upomnienie* or *nagana* letters that were done properly.\n- Anonymised notes from past disciplinary cases you handled well.\n\n#### Step 2. Create the Project.\n- Click **Projects** in the left sidebar, then **New project**.\n- Name it: **Aga — HR Discipline & Labour Law**.\n\n#### Step 3. Upload your materials.\nUpload everything you gathered in Step 1. The Kodeks pracy is the most important — without it, Claude will rely on its general training and is much more likely to make things up.\n\n#### Step 4. Give the Project its instructions.\nPaste this into **Custom instructions** and adjust as needed:"
+          },
+          {
+            "type": "prompt",
+            "text": "You are my sparring partner for HR disciplinary situations at Creon, a manufacturing company in Poland.\n\nYour job is to help me think through difficult conversations with employees who are making repeated mistakes on the production floor — and to help me stay within Polish labour law (Kodeks pracy).\n\nWhen I describe a situation:\n1. Ask me clarifying questions before giving advice — specifically about the employee's history, what's already been tried, what kind of mistakes, whether there's been any documented warning before, and how long this has been going on.\n2. Once you understand the situation, give me two distinct things:\n- **The legal angle**: what does the Kodeks pracy say about this kind of situation? Cite the specific article (e.g. 'Art. 108 §1 KP') and quote the relevant passage from the uploaded document. Do not cite articles from memory — only cite what you can find in the uploaded materials.\n- **The conversational angle**: how should I actually have this conversation? Tone, structure, what to say first, how to document it, how to leave the door open for improvement.\n3. Always be honest about uncertainty. If you can't find the relevant article in the uploaded Code, say so — don't fabricate.\n4. Always end with: 'This is sparring, not legal advice. Verify with an HR specialist or lawyer before formal action.'\n\nDefault language: Polish. Switch to English or Dutch only when I clearly ask.\n\nImportant: I never want you to draft a final disciplinary letter that I would send as-is. Draft something that I will edit, verify, and likely consult on before signing."
+          },
+          {
+            "type": "prose",
+            "md": "#### Step 5. Test it with a real (or anonymised) case.\nOpen a new chat inside the Project. Describe a real situation — anonymised if you prefer:"
+          },
+          {
+            "type": "prompt",
+            "text": "I have an employee on the assembly line who has had three quality issues in the last six weeks — wrong measurements on two windows and missing a step on a third. I've spoken to them informally twice. The mistakes are getting more frequent. I need to think about whether this should escalate to a formal upomnienie and how to have that conversation."
+          },
+          {
+            "type": "prose",
+            "md": "See how Claude handles it. Watch for two things:\n\n- Does it ask you the right clarifying questions first?\n- When it cites the law, does it quote the actual text from the uploaded Code, or does it speak in general terms?\n\nIf it speaks in general terms instead of quoting, push back:"
+          },
+          {
+            "type": "prompt",
+            "text": "You said the Code requires a written warning before termination — show me the exact article you're citing. Quote the text from the document I uploaded."
+          },
+          {
+            "type": "prose",
+            "md": "This is the most important check in this Project. Use it every time.\n\n#### Step 6. Refine the instructions.\nEdge cases will come up. Update the Custom instructions every time you find a pattern that should be permanent:"
+          },
+          {
+            "type": "prompt",
+            "text": "From now on, when I describe a situation, also ask whether the employee is in a protected category — pregnant, on parental leave, near retirement — because those situations have different rules."
+          },
+          {
+            "type": "prose",
+            "md": "#### Step 7. Build the habit.\nThis Project gets more useful as your library of past cases grows. Anonymise and upload cases you handled well — they become reference points for future ones.\n\n**Important and non-negotiable:**\n- **Claude is sparring, not authority.** Every meaningful action — a written warning, a termination notice, a formal meeting — gets verified with an HR specialist or lawyer before it happens.\n- **Verify every legal citation.** Open the Kodeks pracy and read the article yourself. If Claude cited something that isn't there, the Project needs more work.\n- **Document everything separately.** Don't rely on the Claude chat as a record. Write your own notes about the situation and the action you took, kept somewhere safe and confidential.\n\n#### Stretch goal — the difficult conversation rehearsal\nAdd this instruction:"
+          },
+          {
+            "type": "prompt",
+            "text": "If I ask you to, role-play as the employee in the conversation. Take their likely position, push back the way they might, ask the questions they might ask. Help me feel ready before I walk in."
+          },
+          {
+            "type": "prose",
+            "md": "This turns the Project into a real rehearsal space. Use it before any difficult meeting."
+          }
+        ]
       }
     ],
     "notesNodes": [
       {
         "type": "prose",
-        "md": "## What we deliberately didn't do today\n\nA few use cases we discussed but didn't put on this worksheet — and why:\n\n- **Intrastat / SODI reporting.** Too system-specific and regulatory-sensitive for a workshop demo. Mention it to us 1:1 if you want to explore later.\n- **Optima invoice processing.** Claude can't currently drive the Optima interface directly. There may be integration paths worth exploring later.\n- **WPS direct integration** (sickness/absence analysis per employee, quality-check errors over time, maintenance tracking through WPS). Claude can't read WPS directly. The Quality Coaching Co-pilot (Path 1) and the manual scheduling work (Path 3) are the manual versions — over time we may explore proper integration. Goes on the \"Beyond Claude alone\" board.\n\nThese all go on the \"Beyond Claude alone\" board at the front of the room. We'll pick them up afterwards.\n\n## End-of-day check\n\nBefore you leave today, make sure:\n- [ ] You have at least one working Project (Path 1, 2, or 4) that you can open tomorrow.\n- [ ] You've tested it with at least one real input.\n- [ ] You've added the materials you wished Claude had during testing.\n- [ ] You have a clear next step — even if it's \"use this Project on an actual fresh batch of quality remarks and see how it does.\"\n\nIf you didn't finish your path, take this worksheet home and continue when you have time.\n\nPawel and Mara are around the whole afternoon — grab us anytime."
+        "md": "## What we deliberately didn't do today\n\nA few use cases we discussed but didn't put on this worksheet — and why:\n\n- **Intrastat / SODI reporting.** Too system-specific and regulatory-sensitive for a workshop demo. Mention it to us 1:1 if you want to explore later.\n- **Optima invoice processing.** Claude can't currently drive the Optima interface directly. There may be integration paths worth exploring later.\n- **WPS direct integration** (sickness/absence analysis per employee, quality-check errors over time, maintenance tracking through WPS). Claude can't read WPS directly. The Quality Coaching Co-pilot (Path 1) and the manual scheduling work (Path 3) are the manual versions — over time we may explore proper integration. Goes on the \"Beyond Claude alone\" board.\n\nThese all go on the \"Beyond Claude alone\" board at the front of the room. We'll pick them up afterwards.\n\n## End-of-day check\n\nBefore you leave today, make sure:\n- [ ] You have at least one working Project (Path 1, 2, 4, or 5) that you can open tomorrow.\n- [ ] You've tested it with at least one real input.\n- [ ] You've added the materials you wished Claude had during testing.\n- [ ] You have a clear next step — even if it's \"use this Project on an actual fresh batch of quality remarks and see how it does.\"\n\nIf you didn't finish your path, take this worksheet home and continue when you have time.\n\nPawel and Mara are around the whole afternoon — grab us anytime."
       }
     ]
   },

@@ -1,4 +1,4 @@
-# Worksheet — Agnieszka (Aga)
+# Worksheet — Agnieszka (Aga) & Anita
 
 **Welcome to your afternoon.** This worksheet is built around the work you do every day at the production site — HR, quality, maintenance, and the documents that come with all of it. The goal is for you to leave today with at least one working assistant that you can actually use tomorrow morning.
 
@@ -40,7 +40,7 @@ This is to get a feel for how Claude handles a pile of messy notes and gives you
 
 ## Pick a path
 
-Four paths below. Each one ends with a working tool you can use after today. **Not sure where to start? Try Path 1** — it's the one most directly tied to your day-to-day. Path 4 is more advanced and uses a different Claude feature (Code Execution) — it's tied to one of the harder problems you handle, so worth a try if you have time.
+Five paths below. Each one ends with a working tool you can use after today. **Not sure where to start? Try Path 1** — it's the one most directly tied to your day-to-day. Path 4 is more advanced and uses a different Claude feature (Code Execution) — it's tied to one of the harder problems you handle, so worth a try if you have time. Path 5 is for the HR side of your role — the disciplinary conversations that need to stay within Polish labour law.
 
 ---
 
@@ -234,6 +234,87 @@ That's the version that scales — one upload, one run, the whole bonus table at
 
 ---
 
+### Path 5 — Build your HR Discipline Sparring Partner *(~25 min)*
+
+**You'll leave with:** a Claude Project loaded with the Polish Labour Code (Kodeks pracy) and your company's internal HR policies — that helps you think through difficult disciplinary conversations *and* surfaces what the law says about how to handle them.
+
+When an employee keeps making mistakes on the production floor, you need two things at once: a way to have the conversation that's firm but constructive, and confidence that you're staying within Polish labour law. This Project gives you a sparring partner for both.
+
+**Important framing up front.** Claude is **not your lawyer**. Even with the Kodeks pracy uploaded, it can misapply a correct article to the wrong situation. This Project helps you *think clearly* about a situation and *find the relevant law to verify* — but anything material always goes past a real HR specialist or lawyer before action.
+
+#### Step 1. Gather your materials before the workshop ends (max 5 min)
+**Minimum to start:**
+- A copy of the **Kodeks pracy** (Polish Labour Code). The official version is available on `isap.sejm.gov.pl`. Download as PDF.
+- Creon's internal HR handbook / regulamin pracy, if one exists.
+
+**Ideal additions** (if quick to find):
+- Any internal disciplinary policy documents.
+- Templates of past *upomnienie* or *nagana* letters that were done properly.
+- Anonymised notes from past disciplinary cases you handled well.
+
+#### Step 2. Create the Project.
+- Click **Projects** in the left sidebar, then **New project**.
+- Name it: **Aga — HR Discipline & Labour Law**.
+
+#### Step 3. Upload your materials.
+Upload everything you gathered in Step 1. The Kodeks pracy is the most important — without it, Claude will rely on its general training and is much more likely to make things up.
+
+#### Step 4. Give the Project its instructions.
+Paste this into **Custom instructions** and adjust as needed:
+
+> *"You are my sparring partner for HR disciplinary situations at Creon, a manufacturing company in Poland.*
+>
+> *Your job is to help me think through difficult conversations with employees who are making repeated mistakes on the production floor — and to help me stay within Polish labour law (Kodeks pracy).*
+>
+> *When I describe a situation:*
+> *1. Ask me clarifying questions before giving advice — specifically about the employee's history, what's already been tried, what kind of mistakes, whether there's been any documented warning before, and how long this has been going on.*
+> *2. Once you understand the situation, give me two distinct things:*
+> *   - **The legal angle**: what does the Kodeks pracy say about this kind of situation? Cite the specific article (e.g. 'Art. 108 §1 KP') and quote the relevant passage from the uploaded document. Do not cite articles from memory — only cite what you can find in the uploaded materials.*
+> *   - **The conversational angle**: how should I actually have this conversation? Tone, structure, what to say first, how to document it, how to leave the door open for improvement.*
+> *3. Always be honest about uncertainty. If you can't find the relevant article in the uploaded Code, say so — don't fabricate.*
+> *4. Always end with: 'This is sparring, not legal advice. Verify with an HR specialist or lawyer before formal action.'*
+>
+> *Default language: Polish. Switch to English or Dutch only when I clearly ask.*
+>
+> *Important: I never want you to draft a final disciplinary letter that I would send as-is. Draft something that I will edit, verify, and likely consult on before signing."*
+
+#### Step 5. Test it with a real (or anonymised) case.
+Open a new chat inside the Project. Describe a real situation — anonymised if you prefer:
+
+> *"I have an employee on the assembly line who has had three quality issues in the last six weeks — wrong measurements on two windows and missing a step on a third. I've spoken to them informally twice. The mistakes are getting more frequent. I need to think about whether this should escalate to a formal upomnienie and how to have that conversation."*
+
+See how Claude handles it. Watch for two things:
+
+- Does it ask you the right clarifying questions first?
+- When it cites the law, does it quote the actual text from the uploaded Code, or does it speak in general terms?
+
+If it speaks in general terms instead of quoting, push back:
+
+> *"You said the Code requires a written warning before termination — show me the exact article you're citing. Quote the text from the document I uploaded."*
+
+This is the most important check in this Project. Use it every time.
+
+#### Step 6. Refine the instructions.
+Edge cases will come up. Update the Custom instructions every time you find a pattern that should be permanent:
+
+> *"From now on, when I describe a situation, also ask whether the employee is in a protected category — pregnant, on parental leave, near retirement — because those situations have different rules."*
+
+#### Step 7. Build the habit.
+This Project gets more useful as your library of past cases grows. Anonymise and upload cases you handled well — they become reference points for future ones.
+
+**Important and non-negotiable:**
+- **Claude is sparring, not authority.** Every meaningful action — a written warning, a termination notice, a formal meeting — gets verified with an HR specialist or lawyer before it happens.
+- **Verify every legal citation.** Open the Kodeks pracy and read the article yourself. If Claude cited something that isn't there, the Project needs more work.
+- **Document everything separately.** Don't rely on the Claude chat as a record. Write your own notes about the situation and the action you took, kept somewhere safe and confidential.
+
+#### Stretch goal — the difficult conversation rehearsal
+Add this instruction:
+> *"If I ask you to, role-play as the employee in the conversation. Take their likely position, push back the way they might, ask the questions they might ask. Help me feel ready before I walk in."*
+
+This turns the Project into a real rehearsal space. Use it before any difficult meeting.
+
+---
+
 ## What we deliberately didn't do today
 
 A few use cases we discussed but didn't put on this worksheet — and why:
@@ -249,7 +330,7 @@ These all go on the "Beyond Claude alone" board at the front of the room. We'll 
 ## End-of-day check
 
 Before you leave today, make sure:
-- [ ] You have at least one working Project (Path 1, 2, or 4) that you can open tomorrow.
+- [ ] You have at least one working Project (Path 1, 2, 4, or 5) that you can open tomorrow.
 - [ ] You've tested it with at least one real input.
 - [ ] You've added the materials you wished Claude had during testing.
 - [ ] You have a clear next step — even if it's "use this Project on an actual fresh batch of quality remarks and see how it does."

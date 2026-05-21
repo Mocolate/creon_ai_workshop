@@ -1,4 +1,4 @@
-# Worksheet — Agnieszka (Aga)
+# Worksheet — Agnieszka (Aga) & Anita
 
 **Witaj na popołudniowej części warsztatu.** Ten worksheet jest zbudowany wokół pracy, którą wykonujesz codziennie w zakładzie produkcyjnym — HR, jakość, utrzymanie ruchu i dokumenty, które się z tym wiążą. Celem jest, żebyś wyszła stąd dziś z co najmniej jednym działającym asystentem, którego naprawdę użyjesz jutro rano.
 
@@ -40,7 +40,7 @@ To, żebyś poczuła, jak Claude radzi sobie ze stosem nieuporządkowanych notat
 
 ## Wybierz ścieżkę
 
-Cztery ścieżki poniżej. Każda kończy się działającym narzędziem, którego możesz użyć po dzisiejszym dniu. **Nie wiesz, od czego zacząć? Spróbuj Ścieżki 1** — jest najbardziej związana z twoją codzienną pracą. Ścieżka 4 jest bardziej zaawansowana i korzysta z innej funkcji Claude (Code Execution) — wiąże się z jednym z trudniejszych problemów, którymi się zajmujesz, więc warto spróbować, jeśli masz czas.
+Pięć ścieżek poniżej. Każda kończy się działającym narzędziem, którego możesz użyć po dzisiejszym dniu. **Nie wiesz, od czego zacząć? Spróbuj Ścieżki 1** — jest najbardziej związana z twoją codzienną pracą. Ścieżka 4 jest bardziej zaawansowana i korzysta z innej funkcji Claude (Code Execution) — wiąże się z jednym z trudniejszych problemów, którymi się zajmujesz, więc warto spróbować, jeśli masz czas. Ścieżka 5 dotyczy strony HR twojej roli — rozmów dyscyplinarnych, które muszą mieścić się w granicach polskiego prawa pracy.
 
 ---
 
@@ -234,6 +234,87 @@ To wersja, która się skaluje — jedno wgranie, jedno uruchomienie, cała tabe
 
 ---
 
+### Ścieżka 5 — Zbuduj swojego HR Discipline Sparring Partnera *(~25 min)*
+
+**Wyjdziesz z:** Claude Projectem załadowanym Kodeksem pracy oraz wewnętrznymi politykami HR Creona — który pomaga ci przemyśleć trudne rozmowy dyscyplinarne *i* wskazuje, co prawo mówi o tym, jak je przeprowadzić.
+
+Gdy pracownik wciąż popełnia błędy na hali produkcyjnej, potrzebujesz dwóch rzeczy naraz: sposobu na przeprowadzenie rozmowy, która jest stanowcza, ale konstruktywna, oraz pewności, że pozostajesz w granicach Kodeksu pracy. Ten Project daje ci sparring partnera do obu.
+
+**Ważne ramy na początku.** Claude **nie jest twoim prawnikiem**. Nawet z wgranym Kodeksem pracy może błędnie zastosować poprawny artykuł do niewłaściwej sytuacji. Ten Project pomaga ci *jasno myśleć* o sytuacji i *znaleźć odpowiednie przepisy do zweryfikowania* — ale wszystko, co istotne, zawsze przechodzi przez prawdziwego specjalistę HR lub prawnika, zanim podejmiesz działanie.
+
+#### Krok 1. Zbierz materiały, zanim warsztat się skończy (max 5 min)
+**Minimum do startu:**
+- Kopia **Kodeksu pracy**. Oficjalna wersja dostępna jest na `isap.sejm.gov.pl`. Pobierz jako PDF.
+- Regulamin pracy / wewnętrzny podręcznik HR Creona, jeśli taki istnieje.
+
+**Idealne dodatki** (jeśli szybko do znalezienia):
+- Dowolne wewnętrzne dokumenty polityki dyscyplinarnej.
+- Wzory dobrze sporządzonych w przeszłości pism *upomnienia* lub *nagany*.
+- Zanonimizowane notatki z wcześniejszych spraw dyscyplinarnych, które dobrze rozwiązałaś.
+
+#### Krok 2. Utwórz Project.
+- Kliknij **Projects** w lewym pasku, potem **New project**.
+- Nazwij go: **Aga — HR Discipline & Kodeks pracy**.
+
+#### Krok 3. Wgraj swoje materiały.
+Wgraj wszystko, co zebrałaś w Kroku 1. Kodeks pracy jest najważniejszy — bez niego Claude polega na swoim ogólnym treningu i znacznie częściej będzie zmyślał.
+
+#### Krok 4. Daj Projectowi instrukcje.
+Wklej to do **Custom instructions** i dostosuj według uznania:
+
+> *"Jesteś moim sparring partnerem w sprawach dyscyplinarnych HR w Creonie, firmie produkcyjnej w Polsce.*
+>
+> *Twoja praca polega na pomaganiu mi w przemyśleniu trudnych rozmów z pracownikami, którzy powtarzają błędy na hali produkcyjnej — i na pomaganiu mi pozostać w granicach Kodeksu pracy.*
+>
+> *Gdy opisuję sytuację:*
+> *1. Zadaj mi pytania doprecyzowujące, zanim udzielisz porady — konkretnie o historię pracownika, co już zostało wypróbowane, jakie rodzaje błędów, czy było wcześniej udokumentowane upomnienie, i jak długo to trwa.*
+> *2. Gdy zrozumiesz sytuację, daj mi dwie odrębne rzeczy:*
+> *   - **Kąt prawny**: co Kodeks pracy mówi o tego rodzaju sytuacji? Cytuj konkretny artykuł (np. 'Art. 108 §1 KP') i przytocz odpowiedni fragment z wgranego dokumentu. Nie cytuj artykułów z pamięci — cytuj tylko to, co możesz znaleźć w wgranych materiałach.*
+> *   - **Kąt rozmowy**: jak właściwie powinnam przeprowadzić tę rozmowę? Ton, struktura, co powiedzieć najpierw, jak to udokumentować, jak zostawić otwarte drzwi do poprawy.*
+> *3. Zawsze bądź szczery co do niepewności. Jeśli nie możesz znaleźć odpowiedniego artykułu w wgranym Kodeksie, powiedz to — nie fabrykuj.*
+> *4. Zawsze kończ słowami: 'To jest sparring, nie porada prawna. Zweryfikuj ze specjalistą HR lub prawnikiem przed formalnym działaniem.'*
+>
+> *Domyślny język: polski. Przełącz na angielski lub holenderski tylko gdy wyraźnie poproszę.*
+>
+> *Ważne: nigdy nie chcę, żebyś sporządzał finalne pismo dyscyplinarne, które wysłałabym w takiej formie. Sporządź coś, co będę edytować, weryfikować i prawdopodobnie konsultować przed podpisaniem."*
+
+#### Krok 5. Przetestuj na prawdziwym (lub zanonimizowanym) przypadku.
+Otwórz nowy czat wewnątrz Projectu. Opisz prawdziwą sytuację — zanonimizowaną, jeśli wolisz:
+
+> *"Mam pracownika na linii montażowej, który miał trzy problemy jakościowe w ciągu ostatnich sześciu tygodni — błędne wymiary dwóch okien i pominięcie kroku w trzecim. Rozmawiałam z nim nieformalnie dwa razy. Błędy stają się częstsze. Muszę przemyśleć, czy powinno to przejść do formalnego upomnienia i jak przeprowadzić tę rozmowę."*
+
+Zobacz, jak Claude to obsłuży. Obserwuj dwie rzeczy:
+
+- Czy zadaje ci najpierw odpowiednie pytania doprecyzowujące?
+- Gdy cytuje prawo, czy przytacza faktyczny tekst z wgranego Kodeksu, czy mówi ogólnymi sformułowaniami?
+
+Jeśli mówi ogólnymi sformułowaniami zamiast cytować, naciśnij:
+
+> *"Powiedziałeś, że Kodeks wymaga pisemnego upomnienia przed wypowiedzeniem — pokaż mi dokładny artykuł, który cytujesz. Przytocz tekst z dokumentu, który wgrałam."*
+
+To najważniejszy sprawdzian w tym Projecie. Używaj go za każdym razem.
+
+#### Krok 6. Doszlifuj instrukcje.
+Pojawią się przypadki brzegowe. Aktualizuj Custom instructions za każdym razem, gdy znajdziesz wzorzec, który powinien być stały:
+
+> *"Od teraz, gdy opisuję sytuację, pytaj też, czy pracownik jest w kategorii chronionej — w ciąży, na urlopie rodzicielskim, blisko emerytury — bo te sytuacje mają inne zasady."*
+
+#### Krok 7. Buduj nawyk.
+Ten Project staje się bardziej użyteczny, gdy twoja biblioteka przeszłych spraw rośnie. Anonimizuj i wgrywaj sprawy, które dobrze rozwiązałaś — staną się punktami odniesienia dla przyszłych.
+
+**Ważne i nienegocjowalne:**
+- **Claude to sparring, nie autorytet.** Każde istotne działanie — pisemne upomnienie, wypowiedzenie, formalne spotkanie — jest weryfikowane ze specjalistą HR lub prawnikiem, zanim się odbędzie.
+- **Weryfikuj każde przywołanie prawa.** Otwórz Kodeks pracy i przeczytaj artykuł sama. Jeśli Claude przywołał coś, czego tam nie ma, Project wymaga dalszej pracy.
+- **Dokumentuj wszystko oddzielnie.** Nie polegaj na czacie Claude jako zapisie. Pisz własne notatki o sytuacji i podjętym działaniu, trzymane w bezpiecznym i poufnym miejscu.
+
+#### Cel rozszerzony — próba trudnej rozmowy
+Dodaj tę instrukcję:
+> *"Jeśli cię o to poproszę, odgrywaj rolę pracownika w rozmowie. Zajmij prawdopodobne stanowisko, naciskaj tak, jak on mógłby, zadawaj pytania, które on mógłby zadać. Pomóż mi poczuć się przygotowaną, zanim wejdę."*
+
+To zamienia Project w prawdziwą przestrzeń do prób. Używaj go przed każdym trudnym spotkaniem.
+
+---
+
 ## Czego celowo nie zrobiliśmy dziś
 
 Kilka use case'ów, które omówiliśmy, ale nie umieściliśmy w tym worksheetie — i dlaczego:
@@ -249,7 +330,7 @@ Wszystkie te trafiają na tablicę "Beyond Claude alone" z przodu sali. Zajmiemy
 ## Sprawdzenie na koniec dnia
 
 Zanim wyjdziesz dziś, upewnij się:
-- [ ] Masz co najmniej jeden działający Project (Ścieżka 1, 2 lub 4), który możesz otworzyć jutro.
+- [ ] Masz co najmniej jeden działający Project (Ścieżka 1, 2, 4 lub 5), który możesz otworzyć jutro.
 - [ ] Przetestowałaś go z co najmniej jednym prawdziwym inputem.
 - [ ] Dodałaś materiały, których życzyłaś sobie, żeby Claude miał podczas testowania.
 - [ ] Masz jasny następny krok — choćby "użyj tego Projectu na faktycznie świeżej porcji uwag z kontroli i zobacz, jak sobie radzi."
