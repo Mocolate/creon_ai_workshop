@@ -1,0 +1,10 @@
+# Archives
+*.zip
+*.tar.gz
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
