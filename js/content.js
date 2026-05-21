@@ -4,7 +4,7 @@
 const CONTENT = {
   "aga": {
     "id": "aga",
-    "displayName": "Aga",
+    "displayName": "Aga & Anita",
     "altLang": "pl",
     "langs": [
       "en",

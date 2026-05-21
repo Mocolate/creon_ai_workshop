@@ -12,7 +12,7 @@ TRANSLATIONS_DIR   = os.path.join(os.path.dirname(__file__), '..', 'worksheet_tr
 JS_DIR             = os.path.join(os.path.dirname(__file__), '..', 'js')
 
 PEOPLE = [
-    dict(file='01_aga.md',      trans='01_aga_pl.md',      id='aga',      displayName='Aga',      altLang='pl'),
+    dict(file='01_aga.md',      trans='01_aga_pl.md',      id='aga',      displayName='Aga & Anita', altLang='pl'),
     dict(file='02_sandra.md',   trans='02_sandra_nl.md',   id='sandra',   displayName='Sandra',   altLang='nl'),
     dict(file='03_sofia.md',    trans='03_sofia_nl.md',    id='sofia',    displayName='Sofia',    altLang='nl'),
     dict(file='04_amber.md',    trans='04_amber_nl.md',    id='amber',    displayName='Amber',    altLang='nl'),
